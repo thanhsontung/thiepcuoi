@@ -474,6 +474,46 @@
             <p id="message2">Sự hiện diện và lời chúc phúc của bạn sẽ làm cho ngày trọng đại của chúng tôi thêm ý nghĩa và trọn vẹn hơn.</p>
         </div>
 
+            <!-- Formal Invitation Card -->
+            <div class="invitation-card" id="invitationCard">
+                <div class="invitation-inner">
+                    <div class="inv-header">TRÂN TRỌNG BÁO TIN LỄ VU QUY</div>
+
+                    <div class="inv-section">
+                        <div class="inv-sub">Nhà gái:</div>
+                        <p><strong>Ông:</strong> SƠN ĐÊN</p>
+                        <p><strong>Bà:</strong> LÂM THỊ BÍCH VÂN (Ly)</p>
+                        <p><strong>Đ/C:</strong> Ấp giồng chùa A, xã An Ninh, thành phố Cần Thơ</p>
+                    </div>
+
+                    <div class="inv-section">
+                        <div class="inv-sub">Nhà trai:</div>
+                        <p><strong>Ông:</strong> PAN JINYI</p>
+                        <p><strong>Bà:</strong> GUO MEIFENG</p>
+                        <p><strong>Đ/C:</strong> Fujian sheng Quanzhou shi Yongchun xian</p>
+                    </div>
+
+                    <div class="inv-main">
+                        <p class="inv-couple"><strong>SƠN THỊ BÍCH TRÂM</strong> (Trưởng nữ) &nbsp;&nbsp; <strong>PAN GUIHUANG</strong> (Quý nam)</p>
+
+                        <p class="inv-detail">HÔN LỄ ĐƯỢC CỬ HÀNH TẠI GIA<br>
+                        Vào lúc <strong>09 giờ 00</strong><br>
+                        <strong>CHỦ NHẬT, NGÀY 30 THÁNG 11 NĂM 2025</strong><br>
+                        (Nhằm ngày 11 tháng 10 năm Ất Tỵ)</p>
+                    </div>
+
+                    <div class="inv-ceremony">
+                        <div class="inv-sub">TRÂN TRỌNG KÍNH MỜI</div>
+                        <p>ĐẾN DỰ BUỔI TIỆC CHUNG VUI CÙNG GIA ĐÌNH CHÚNG TÔI TẠI: <strong>TƯ GIA</strong></p>
+                        <p><strong>Đ/C:</strong> Ấp giồng chùa A, xã An Ninh, thành phố Cần Thơ</p>
+                        <p><strong>VÀO LÚC:</strong> <strong>11H00</strong></p>
+                        <p><strong>CHỦ NHẬT, Ngày 30 tháng 11 năm 2025</strong><br>
+                        (Nhằm ngày 11 tháng 10 năm Ất Tỵ)</p>
+                        <p class="inv-note">Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình chúng tôi. KÍNH MỜI.</p>
+                    </div>
+                </div>
+            </div>
+
         <div class="info-card" id="infoCard" style="display: none;">
             <h3 id="infoTitle">📋 Thông Tin Đã Gửi</h3>
             <div class="info-item">
@@ -504,6 +544,7 @@
             <a href="/form" class="btn btn-secondary" id="btnForm">
                 <span>✏️</span> Gửi Lời Chúc Khác
             </a>
+                <a href="#" class="btn btn-primary" id="btnPrint">🖨️ In thiệp</a>
         </div>
     </div>
 
@@ -609,6 +650,33 @@
             
             setTimeout(() => petal.remove(), 7000);
         }
+
+            // Print invitation: open printable window containing the invitation card
+            function printInvitation() {
+                const card = document.getElementById('invitationCard');
+                if (!card) return alert('Không tìm thấy thiệp mời.');
+
+                const win = window.open('', '_blank', 'toolbar=0,location=0,menubar=0');
+                const styles = `
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+                    <style>
+                        body{font-family: 'Crimson Text', serif; padding:30px; color:#4a2c2a; background:white}
+                        .invitation-print{max-width:800px;margin:0 auto}
+                        .invitation-print .inv-header{font-family:'Playfair Display',serif; font-size:22px; color:#8b4d4f; text-align:center}
+                        .invitation-print p{line-height:1.6; font-size:16px}
+                    </style>
+                `;
+
+                win.document.open();
+                win.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Thiệp mời</title>${styles}</head><body><div class="invitation-print">${card.innerHTML}</div></body></html>`);
+                win.document.close();
+                // Wait a moment for fonts to load then print
+                setTimeout(() => { win.focus(); win.print(); }, 500);
+            }
+
+            document.getElementById('btnPrint').addEventListener('click', function(e){ e.preventDefault(); printInvitation(); });
 
         // Create petals periodically
         for (let i = 0; i < 8; i++) {
