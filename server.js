@@ -1,4 +1,4 @@
-// server.js
+﻿// server.js
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
@@ -19,7 +19,7 @@ const connectDB = async () => {
         console.log('MongoDB đã kết nối thành công!');
     } catch (err) {
         console.error('Lỗi kết nối MongoDB:', err.message);
-        process.exit(1); // Thoát ứng dụng nếu kết nối lỗi
+        process.exit(1);
     }
 };
 
@@ -31,6 +31,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/views', 'indexthief.html'));
 });
 
+// Route trang form RSVP (form đơn giản với validation)
+app.get('/form', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/views', 'index.html'));
+});
+
 // Route trang cảm ơn (HTML tĩnh - tên khách được truyền qua query param)
 app.get('/thank-you', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/views', 'thank_you.html'));
@@ -40,7 +45,7 @@ app.get('/thank-you', (req, res) => {
 app.post('/api/submit-response', async (req, res) => {
     try {
         const { senderName, relationship, message, attendance, numberOfGuests } = req.body;
-
+        
         // Kiểm tra xem có dữ liệu bắt buộc không
         if (!senderName || !attendance || !numberOfGuests) {
             return res.status(400).json({ success: false, message: 'Vui lòng điền đầy đủ thông tin bắt buộc.' });
@@ -74,4 +79,3 @@ app.post('/api/submit-response', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server đang chạy tại http://localhost:${PORT}`);
 });
-

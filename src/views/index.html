@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Mời Đám Cưới</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="vi">🇻🇳 Tiếng Việt</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="cn">🇨🇳 中文</option>
+                </select>
+            </div>
+            
+            <form id="rsvpForm">
+                <!-- Tên của bạn -->
+                <div class="form-group">
+                    <label for="senderName">
+                        👤 <span class="label-text">Tên của bạn</span> <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="senderName" 
+                        name="senderName" 
+                        placeholder="Nhập tên của bạn..."
+                        required
+                    >
+                </div>
+
+                <!-- Mối quan hệ -->
+                <div class="form-group">
+                    <label for="relationship">
+                        🤝 <span class="label-text">Mối quan hệ</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="relationship" 
+                        name="relationship" 
+                        placeholder="Bạn của cô dâu..."
+                    >
+                </div>
+
+                <!-- Bạn có thể tham dự? -->
+                <div class="form-group">
+                    <label for="attendance">
+                        🎉 <span class="label-text">Bạn có thể tham dự?</span> <span class="required">*</span>
+                    </label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">-- Chọn --</option>
+                        <option value="yes">Tôi sẽ tham dự</option>
+                        <option value="no">Xin lỗi, tôi bận mất rồi</option>
+                        <option value="maybe">Chưa chắc chắn</option>
+                    </select>
+                </div>
+
+                <!-- Số người -->
+                <div class="form-group">
+                    <label for="numberOfGuests">
+                        👥 <span class="label-text">Số người</span>
+                    </label>
+                    <input 
+                        type="number" 
+                        id="numberOfGuests" 
+                        name="numberOfGuests" 
+                        placeholder="1"
+                        min="1"
+                        value="1"
+                    >
+                </div>
+
+                <!-- Lời chúc -->
+                <div class="form-group">
+                    <label for="message">
+                        😍 <span class="label-text">Lời chúc</span>
+                    </label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="4"
+                        placeholder="Gửi lời chúc tới đôi uyên ương..."
+                    ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    ✉️ GỬI LỜI CHÚC
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>
