@@ -19,6 +19,10 @@
             font-family: 'Open Sans', sans-serif;
             background: #FEF0DF;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
 
         .container {
@@ -26,6 +30,19 @@
             max-width: 420px;
             margin: 0 auto;
             padding: 20px;
+            background: #FEF0DF;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Chỉ hiển thị giao diện mobile */
+        @media (min-width: 421px) {
+            body {
+                background: #d3d3d3;
+            }
+            
+            .container {
+                margin: 0 auto;
+            }
         }
 
         /* Opening Door Animation */
@@ -135,6 +152,7 @@
         .decorative-header {
             text-align: center;
             margin: 60px 0 40px;
+            position: relative;
         }
 
         .decorative-bg {
@@ -152,6 +170,13 @@
             color: #3F3F3F;
             letter-spacing: 3px;
             margin: 15px 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
         }
 
         .decorative-header p {
@@ -159,6 +184,13 @@
             font-size: 18px;
             color: #3F3F3F;
             letter-spacing: 3px;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: 2;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
         }
 
         /* Wedding Details */
@@ -314,17 +346,18 @@
         /* Container cho ảnh và text */
         .photo-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 20px;
         }
 
         .photo-item.reverse .photo-content {
-            flex-direction: row-reverse;
+            flex-direction: column;
         }
 
         /* Hiệu ứng ảnh - slide từ bên */
         .photo-item .photo-wrapper {
-            flex: 0 0 250px;
+            width: 100%;
             opacity: 0;
             transition: all 0.8s ease;
         }
@@ -344,7 +377,8 @@
 
         /* Hiệu ứng text - fade từ dưới lên */
         .photo-text {
-            flex: 1;
+            width: 100%;
+            text-align: center;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease 0.3s;
@@ -358,7 +392,7 @@
 
         .photo-item img {
             width: 100%;
-            max-width: 250px;
+            max-width: 100%;
             border-radius: 12px;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -366,16 +400,16 @@
         }
 
         .photo-item img:hover {
-            transform: scale(1.05) rotate(0deg) !important;
+            transform: scale(1.02) !important;
             box-shadow: 0 12px 30px rgba(166, 55, 54, 0.3);
         }
 
         .photo-item:not(.reverse) img {
-            transform: rotate(-2deg);
+            transform: rotate(0deg);
         }
 
         .photo-item.reverse img {
-            transform: rotate(2deg);
+            transform: rotate(0deg);
         }
 
         .photo-text h3 {
@@ -390,7 +424,7 @@
             color: #555;
             font-size: 14px;
             line-height: 1.8;
-            text-align: justify;
+            text-align: center;
         }
 
         /* Responsive cho mobile */
@@ -1618,14 +1652,14 @@
                     src="https://w.ladicdn.com/s700x400/5c728619c417ab07e5194baa/e4666fdc-e982-4eae-bc29-7699635bde15-20250813065851-fb6dn.png"
                     alt="Decoration">
                 <h2>Thiệp Mời Đám Cưới</h2>
-                <p>Wedding invitation</p>
+                <!-- <p>Wedding invitation</p> -->
             </div>
         </div>
 
         <!-- Wedding Details -->
 <div class="section wedding-details">
     <div class="wedding-details-box">
-        <img class="detail-img" src="https://w.ladicdn.com/s700x850/5c728619c417ab07e5194baa/d39dc559-d79e-40e4-bddc-4ced3235526f-20250813065851-2dmwv.png" alt="Wedding Detail">
+        <!-- <img class="detail-img" src="https://w.ladicdn.com/s700x850/5c728619c417ab07e5194baa/d39dc559-d79e-40e4-bddc-4ced3235526f-20250813065851-2dmwv.png" alt="Wedding Detail"> -->
         
         <h3>đến dự buổi tiệc rượu chung vui<br>cùng gia đình chúng tôi tại</h3>
         
@@ -2048,8 +2082,20 @@
     </div>
 
     <script>
+        // Scroll to top on page load
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+
+        // Force scroll to top when page loads
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         // Opening Door Animation
         window.addEventListener('load', function () {
+            window.scrollTo(0, 0);
             setTimeout(() => {
                 document.body.classList.add('open');
             }, 500);
