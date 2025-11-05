@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phong Bì Tình Yêu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 150vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+        }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 450px;
+            height: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .envelope-wrapper:hover:not(.open) {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        /* Bóng đổ */
+        .shadow {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 35px;
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: 0;
+        }
+
+        /* Container chính */
+        .envelope {
+            position: relative;
+            width: 450px;
+            height: 300px;
+        }
+
+        /* Mặt sau phong bì */
+        .back {
+            position: absolute;
+            width: 450px;
+            height: 300px;
+            background: linear-gradient(135deg, #c85a5a 0%, #a84848 100%);
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        /* Nắp phong bì trên (tam giác) */
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 225px solid transparent;
+            border-right: 225px solid transparent;
+            border-top: 170px solid #8b3a3a;
+            transform-origin: top center;
+            transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 10;
+        }
+
+        /* Tam giác dưới */
+        .bottom-flap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-left: 225px solid transparent;
+            border-right: 225px solid transparent;
+            border-bottom: 150px solid #c85a5a;
+            z-index: 2;
+        }
+
+        /* Phần túi dưới */
+        .pocket {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 450px;
+            height: 150px;
+            background: linear-gradient(to bottom, #c85a5a 0%, #b04d4d 100%);
+            border-radius: 0 0 10px 10px;
+            z-index: 3;
+        }
+
+        /* Tem sáp */
+        .wax-seal {
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75px;
+            height: 75px;
+            background: radial-gradient(circle, #8b6f47 0%, #6b5536 100%);
+            border-radius: 50%;
+            z-index: 11;
+            transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            color: #a89968;
+        }
+
+        .wax-seal::before {
+            content: '♥';
+        }
+
+        /* Miếng che đỏ phía trước (khi chưa mở) */
+        .front-cover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 450px;
+            height: 300px;
+            background: linear-gradient(to bottom, #c85a5a 0%, #b04d4d 100%);
+            border-radius: 0 0 10px 10px;
+            z-index: 9;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: opacity 0.8s ease;
+        }
+
+        /* Lá thư với ảnh */
+        .letter {
+            position: absolute;
+    bottom: -420px; /* 👈 đẩy sâu hơn do kích thước lớn hơn */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 550px;
+    background: transparent; /* 👈 trong suốt ban đầu */
+    border-radius: 8px 8px 0 0;
+    box-shadow: none; /* 👈 không có bóng ban đầu */
+    z-index: 8; /* 👈 nằm dưới front-cover (z-index: 9) */
+    transition: bottom 1.4s cubic-bezier(0.65, 0, 0.35, 1), background 0.5s ease 1s, box-shadow 0.5s ease 1s, z-index 0s ease;
+    overflow: hidden;
+        }
+
+        /* Khi đóng phong bì - lá thư về vị trí ban đầu nhanh hơn */
+        .envelope-wrapper:not(.open) .letter {
+            bottom: -420px !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            z-index: 8 !important;
+            transition: bottom 0.3s ease, background 0s ease, box-shadow 0s ease !important;
+        }
+
+        /* Container ảnh */
+        .photo-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Trái tim trang trí */
+        .heart-decoration {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 95px;
+            color: #c85a5a;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* 👈 ẩn ban đầu */
+            transition: opacity 1.2s ease-in-out 1.0s;
+        }
+
+        /* Tên cặp đôi */
+        .couple-names {
+            position: absolute;
+            top: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 32px;
+            color: #8b3a3a;
+            z-index: 2;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            opacity: 0; /* 👈 ẩn ban đầu */
+            transition: opacity 1.2s ease-in-out 1.2s;
+        }
+
+        /* Ảnh */
+        .letter-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 👈 cho khít */
+    object-position: top center; /* 👈 hiện phần đầu ảnh trước */
+    opacity: 0; /* 👈 hoàn toàn vô hình ban đầu */
+    visibility: hidden; /* 👈 ẩn hoàn toàn */
+    transform: scale(0.8);
+    transition: opacity 2s ease-in-out 0.8s, visibility 0s linear 0.8s, transform 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.8s;
+}
+/* Khi mở phong bì — ảnh hiện ra và trượt lên chút */
+.envelope-wrapper.open .letter-image {
+    opacity: 1; /* 👈 hiện ảnh khi mở */
+    visibility: visible; /* 👈 cho phép hiển thị */
+    transform: translateY(-10px) scale(1);
+    transition: opacity 2s ease-in-out 0.8s, visibility 0s linear 0.8s, transform 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.8s;
+}
+/* Khi đóng phong bì — ảnh biến mất ngay lập tức */
+.envelope-wrapper:not(.open) .letter-image {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scale(0) !important;
+    transition: all 0s ease !important;
+}
+
+/* Khi đóng phong bì — tên cặp đôi và trái tim cũng biến mất ngay */
+.envelope-wrapper:not(.open) .heart-decoration,
+.envelope-wrapper:not(.open) .couple-names {
+    opacity: 0 !important;
+    transition: opacity 0s ease !important;
+}
+        /* Miếng che đỏ (hiện sau khi mở) */
+        .white-cover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 450px;
+            height: 300px;
+            background: linear-gradient(to bottom, #c85a5a 0%, #b04d4d 100%);
+            border-radius: 0 0 10px 10px;
+            z-index: 11;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            /* ẩn hoàn toàn ban đầu */
+            transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+            /* delay visibility để ẩn sau khi tắt */
+        }
+
+        .white-cover .label {
+            position: absolute;
+            top: 28px;
+            left: 45px;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .white-cover .names {
+            position: absolute;
+            top: 28px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 45px;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 32px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.0s ease 0.0s;
+            /* <– delay 0.5s mới hiện */
+        }
+
+        /* Trái tim bay */
+        .hearts-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            pointer-events: none;
+            z-index: 12;
+            overflow: visible;
+        }
+
+        .floating-heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff4081;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+
+        .floating-heart::before,
+        .floating-heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff4081;
+            border-radius: 50%;
+        }
+
+        .floating-heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .floating-heart::after {
+            left: 10px;
+            top: 0;
+        }
+
+        .heart1 {
+            top: 100px;
+            left: 20%;
+        }
+
+        .heart2 {
+            top: 100px;
+            left: 50%;
+        }
+
+        .heart3 {
+            top: 100px;
+            left: 80%;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) rotate(45deg) scale(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateY(-20px) rotate(45deg) scale(1);
+            }
+
+            100% {
+                transform: translateY(-200px) rotate(45deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Hướng dẫn */
+        .instruction {
+            position: absolute;
+            bottom: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8b3a3a;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* TRẠNG THÁI MỞ */
+        .envelope-wrapper.open .flap {
+            transform: rotateX(-180deg);
+        }
+
+        .envelope-wrapper.open .letter {
+    bottom: 155px; /* 👈 trượt lên để lộ ra khoảng 2/3 tấm */
+    background: white; /* 👈 hiện background trắng khi mở */
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2); /* 👈 hiện bóng khi mở */
+    z-index: 10; /* 👈 lên trên khi mở */
+}
+
+        .envelope-wrapper.open .front-cover {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.8s ease;
+        }
+
+        /* Khi đóng phong bì - front-cover hiện ngay lập tức */
+        .envelope-wrapper:not(.open) .front-cover {
+            opacity: 1;
+            transition: opacity 0.2s ease !important;
+        }
+
+        .envelope-wrapper.open .white-cover {
+            opacity: 1;
+            visibility: visible;
+            /* hiện khi mở */
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .envelope-wrapper.open .wax-seal {
+            opacity: 0;
+            transform: translateX(-50%) scale(0) rotate(720deg);
+        }
+
+        .envelope-wrapper.open .floating-heart {
+            animation: float-up 3.5s ease-out forwards;
+        }
+
+        .envelope-wrapper.open .heart1 {
+            animation-delay: 0.6s;
+        }
+
+        .envelope-wrapper.open .heart2 {
+            animation-delay: 0.9s;
+        }
+
+        .envelope-wrapper.open .heart3 {
+            animation-delay: 1.2s;
+        }
+
+        .envelope-wrapper.open .instruction {
+            opacity: 0;
+        }
+
+        .envelope-wrapper.open:hover {
+            transform: none;
+        }
+
+        /* Khi mở phong bì - hiện tên cặp đôi và trái tim */
+        .envelope-wrapper.open .heart-decoration {
+            opacity: 1;
+        }
+
+        .envelope-wrapper.open .couple-names {
+            opacity: 1;
+        }
+
+        /* Nắp phong bì (flap) — làm mượt hơn */
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 175px solid transparent;
+            border-right: 175px solid transparent;
+            border-top: 130px solid #8b3a3a;
+            transform-origin: top center;
+            transform: rotateX(0deg);
+            transition: transform 1.2s cubic-bezier(0.45, 0, 0.25, 1),
+                filter 0.6s ease;
+            filter: brightness(1);
+            z-index: 10;
+        }
+
+        /* Khi mở phong bì — nắp lật lên nhẹ nhàng và hơi sáng hơn */
+        .envelope-wrapper.open .flap {
+            transform: rotateX(-165deg) translateY(-3px);
+            filter: brightness(1.15);
+            transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="shadow"></div>
+        <div class="envelope">
+            <div class="back"></div>
+            <div class="bottom-flap"></div>
+            <div class="pocket"></div>
+            <div class="flap"></div>
+            <div class="wax-seal"></div>
+
+            <!-- Miếng che đỏ (khi chưa mở) -->
+            <div class="front-cover"></div>
+
+            <!-- Lá thư với ảnh -->
+            <div class="letter">
+                <div class="photo-container">
+                    <div class="heart-decoration">♥</div>
+                    <div class="couple-names">
+                        <span>Sơn Thị Bích Trâm</span>
+                        <span>Pan Guihuang</span>
+                    </div>
+                    <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1761645381/capdoi_uz3ou9.png"
+                        alt="Love Letter" class="letter-image">
+                </div>
+            </div>
+
+            <!-- Miếng che trắng (sau khi mở) -->
+            <div class="white-cover">
+                <div class="label">Love Letter</div>
+                <div class="names">
+                    <span>Sơn Thị Bích Trâm</span>
+                    <span>Pan Guihuang</span>
+                </div>
+            </div>
+
+            <!-- Trái tim bay -->
+            <div class="hearts-container">
+                <div class="floating-heart heart1"></div>
+                <div class="floating-heart heart2"></div>
+                <div class="floating-heart heart3"></div>
+            </div>
+        </div>
+        <!-- <div class="instruction">✨ Nhấn để mở phong bì ✨</div> -->
+    </div>
+
+    <script>
+        const wrapper = document.getElementById('envelopeWrapper');
+        let isOpen = false;
+
+        wrapper.addEventListener('click', function () {
+            isOpen = !isOpen;
+
+            if (isOpen) {
+                wrapper.classList.add('open');
+            } else {
+                wrapper.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+
+</html>
