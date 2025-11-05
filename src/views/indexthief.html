@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Thiệp Cưới - Bích Trâm 囍 Guihuang</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Crimson+Text:wght@400;600&family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&display=swap"
@@ -15,14 +15,49 @@
             box-sizing: border-box;
         }
 
+        /* Ngăn overflow toàn cục */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden !important;
+            width: 100%;
+            max-width: 100%;
+        }
+
         body {
             font-family: 'Crimson Text', serif;
             background: #FEF0DF;
-            overflow-x: hidden;
+            overflow-x: hidden !important;
+            width: 100%;
+            max-width: 100vw;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            position: relative;
+        }
+
+        /* Ngăn tất cả elements tràn viewport */
+        img,
+        video,
+        iframe,
+        embed,
+        object {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Ngăn scroll ngang trên mobile */
+        @media (max-width: 480px) {
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
         }
 
         .container {
@@ -32,6 +67,7 @@
             padding: 6px;
             background: rgba(254, 240, 223, 0.95);
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+            overflow-x: hidden;
         }
 
         /* Chỉ hiển thị giao diện mobile */
@@ -42,6 +78,15 @@
 
             .container {
                 margin: 0 auto;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 480px) {
+            .container {
+                max-width: 100%;
+                padding: 3px;
+                margin: 0;
             }
         }
 
@@ -2091,7 +2136,7 @@
             opacity: 0;
             transform: translateY(60px) scale(0.9);
             animation: slideUpFadeIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            animation-delay: 0.2s;
+            /* animation-delay: 0.2s; */
         }
 
         .le-vu-quy-animation {
@@ -2803,9 +2848,9 @@
             }
 
             /* Tạo độ trễ cho từng phần để xuất hiện lần lượt */
-            .levuquy h9 {
-                animation-delay: 0.2s;
-            }
+            /* .levuquy h9 {
+                animation-delay: 0.2s;  
+            } */
 
             .levuquy h1:nth-of-type(1) {
                 animation-delay: 0.4s;
@@ -2869,7 +2914,7 @@
 
                 <h1 class="couple-names le-vu-quy-animation" style="margin: 0; color: #c20b0b;">Lễ Vu Quy</h1>
 
-                <div
+                <div class="couple-names-container"
                     style="display: flex; justify-content: space-between; align-items: center; gap: 20px; margin: 20px 0;">
                     <h1 class="couple-names bride-name-animation"
                         style="font-size: 1.293em; margin: 0; flex: 1; text-align: right;">Sơn Thị Bích Trâm</h1>
@@ -2878,7 +2923,7 @@
                             alt="♥"></span>
                     <h1 class="couple-names groom-name-animation"
                         style="font-size: 1.293em; margin: 0; flex: 1; text-align: left;">Pan Guihuang</h1>
-                </div>
+                </div>  
 
             </div>
 
@@ -3232,6 +3277,87 @@
                 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
             }
 
+            /* ===== NEW GRID LAYOUT - 3 COLUMNS ===== */
+            .album-grid-new {
+                display: flex;
+                gap: 2px;
+                background-color: #7a1f1f;
+                padding: 0;
+                margin: 0;
+            }
+
+            .album-column {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            /* Photo box styling */
+            .album-column .photo-box {
+                overflow: hidden;
+                background-color: #7a1f1f;
+                position: relative;
+                opacity: 0;
+                transform: scale(0.95);
+                animation: photoFadeIn 0.6s ease forwards;
+                cursor: pointer;
+            }
+
+            /* Animation delays cho từng ảnh */
+            .album-grid-new:nth-of-type(1) .album-column:nth-child(1) .photo-box:nth-child(1) {
+                animation-delay: 0.7s;
+            }
+            .album-grid-new:nth-of-type(1) .album-column:nth-child(1) .photo-box:nth-child(2) {
+                animation-delay: 0.85s;
+            }
+            .album-grid-new:nth-of-type(1) .album-column:nth-child(1) .photo-box:nth-child(3) {
+                animation-delay: 1s;
+            }
+            .album-grid-new:nth-of-type(1) .album-column:nth-child(2) .photo-box {
+                animation-delay: 0.8s;
+            }
+            .album-grid-new:nth-of-type(1) .album-column:nth-child(3) .photo-box:nth-child(1) {
+                animation-delay: 0.9s;
+            }
+            .album-grid-new:nth-of-type(1) .album-column:nth-child(3) .photo-box:nth-child(2) {
+                animation-delay: 1.05s;
+            }
+            .album-grid-new:nth-of-type(1) .album-column:nth-child(3) .photo-box:nth-child(3) {
+                animation-delay: 1.2s;
+            }
+
+            /* Hàng 2 animation */
+            .album-grid-new:nth-of-type(2) .album-column:nth-child(1) .photo-box {
+                animation-delay: 1.3s;
+            }
+            .album-grid-new:nth-of-type(2) .album-column:nth-child(2) .photo-box {
+                animation-delay: 1.4s;
+            }
+            .album-grid-new:nth-of-type(2) .album-column:nth-child(3) .photo-box {
+                animation-delay: 1.5s;
+            }
+
+            /* Image styling */
+            .album-column .photo-box img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+                object-position: center;
+                transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            }
+
+            /* Hover effects */
+            .album-column .photo-box:hover img {
+                transform: scale(1.08);
+            }
+
+            .album-column .photo-box:hover {
+                z-index: 10;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            }
+
             /* Footer */
             .album-footer {
                 padding: 0.6rem 0 0.7rem;
@@ -3276,59 +3402,100 @@
                     border-radius: 8px;
                 }
 
-                /* Cân bằng chiều cao: 6×88 = 528px | 5×105.6 = 528px */
-                .album-left>div {
-                    height: 88px !important;
+                /* NEW GRID LAYOUT - Mobile responsive */
+                .album-grid-new {
+                    flex-direction: column !important;
+                    gap: 2px !important;
                 }
 
-                .album-right>div {
-                    height: 106px !important;
+                .album-column {
+                    width: 100% !important;
+                    flex-direction: row !important;
+                    overflow-x: auto !important;
+                    overflow-y: hidden !important;
+                    gap: 5px !important;
+                    padding: 0 !important;
+                    -webkit-overflow-scrolling: touch;
                 }
 
-                /* Tùy chỉnh mobile - Cột TRÁI */
-                .photo-left-1 {
-                    height: 88px !important;
+                .album-column .photo-box {
+                    height: 200px !important;
+                    min-width: 150px !important;
+                    flex-shrink: 0 !important;
                 }
 
-                .photo-left-2 {
-                    height: 88px !important;
+                /* Scrollbar styling */
+                .album-column::-webkit-scrollbar {
+                    height: 3px;
                 }
 
-                .photo-left-3 {
-                    height: 88px !important;
+                .album-column::-webkit-scrollbar-track {
+                    background: rgba(255, 255, 255, 0.1);
                 }
 
-                .photo-left-4 {
-                    height: 88px !important;
+                .album-column::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 3px;
                 }
 
-                .photo-left-5 {
-                    height: 88px !important;
+                /* OLD GRID LAYOUT - Keep for compatibility */
+                .album-grid {
+                    flex-direction: column !important;
+                    height: auto !important;
+                    padding: 0 !important;
                 }
 
-                .photo-left-6 {
-                    height: 88px !important;
+                .album-left, .album-right {
+                    width: 100% !important;
+                    flex-direction: row !important;
+                    overflow-x: auto !important;
+                    overflow-y: hidden !important;
+                    gap: 5px !important;
+                    padding: 5px 0 !important;
+                    -webkit-overflow-scrolling: touch;
                 }
 
-                /* Tùy chỉnh mobile - Cột PHẢI */
-                .photo-right-1 {
-                    height: 106px !important;
+                .album-left > div,
+                .album-right > div {
+                    height: 200px !important;
+                    min-width: 150px !important;
+                    flex-shrink: 0 !important;
                 }
 
-                .photo-right-2 {
-                    height: 106px !important;
+                .photo-left-1,
+                .photo-left-2,
+                .photo-left-3,
+                .photo-left-4,
+                .photo-left-5,
+                .photo-left-6,
+                .photo-left-7 {
+                    height: 200px !important;
+                    min-width: 150px !important;
                 }
 
-                .photo-right-3 {
-                    height: 106px !important;
-                }
-
-                .photo-right-4 {
-                    height: 106px !important;
-                }
-
+                .photo-right-1,
+                .photo-right-2,
+                .photo-right-3,
+                .photo-right-4,
                 .photo-right-5 {
-                    height: 106px !important;
+                    height: 200px !important;
+                    min-width: 150px !important;
+                }
+
+                .album-left::-webkit-scrollbar,
+                .album-right::-webkit-scrollbar {
+                    height: 3px;
+                }
+
+                .album-left::-webkit-scrollbar-track,
+                .album-right::-webkit-scrollbar-track {
+                    background: rgba(255, 255, 255, 0.1);
+                }
+
+                .album-left::-webkit-scrollbar-thumb,
+                .album-right::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 3px;
                 }
 
                 .album-header {
@@ -3370,147 +3537,475 @@
                     max-width: 380px;
                 }
             }
+
+            /* ===== COMPREHENSIVE RESPONSIVE FIXES FOR MOBILE ===== */
+            @media (max-width: 480px) {
+                /* Fix container và overflow */
+                * {
+                    max-width: 100%;
+                }
+
+                html, body {
+                    overflow-x: hidden !important;
+                    width: 100% !important;
+                }
+
+                .container {
+                    overflow-x: hidden !important;
+                    width: 100% !important;
+                    padding: 3px !important;
+                }
+
+                /* Fix header section - CRITICAL FIX */
+                .header-section {
+                    background-size: 50% !important;
+                    padding: 30px 10px 20px 10px !important;
+                    min-height: auto !important;
+                    overflow: visible !important;
+                }
+
+                /* Fix levuquy section - hiển thị text */
+                .levuquy {
+                    width: 100% !important;
+                    padding: 10px !important;
+                    display: block !important;
+                }
+
+                .levuquy h9 {
+                    font-size: 18px !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    color: #c20b0b !important;
+                    margin: 10px 0 !important;
+                    animation: none !important;
+                }
+
+                .levuquy h1 {
+                    font-size: 26px !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    color: #c20b0b !important;
+                    margin: 10px 0 !important;
+                    animation: none !important;
+                }
+
+                /* Fix couple names container */
+                .couple-names-container {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    gap: 10px !important;
+                    margin: 15px 0 !important;
+                    width: 100% !important;
+                    justify-content: center !important;
+                }
+
+                /* Fix bride and groom names */
+                .bride-name-animation,
+                .groom-name-animation {
+                    font-size: 20px !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    text-align: center !important;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
+                    animation: none !important;
+                    flex: none !important;
+                    padding: 0 10px !important;
+                }
+
+                /* Fix heart icon */
+                .heart-animation {
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                    animation: none !important;
+                }
+
+                .mini-heart-icon img {
+                    max-width: 50px !important;
+                    height: auto !important;
+                }
+
+                .couple-names {
+                    font-size: 22px !important;
+                }
+
+                /* Fix main photo */
+                .main-photo {
+                    max-width: 100% !important;
+                    height: auto !important;
+                    display: block !important;
+                }
+
+                /* Fix decorative header */
+                .decorative-header {
+                    height: auto !important;
+                    min-height: 100px !important;
+                    overflow: hidden !important;
+                }
+
+                .decorative-header h4 {
+                    font-size: 16px !important;
+                    padding: 0 15px !important;
+                    line-height: 1.4 !important;
+                }
+
+                .decorative-bg {
+                    max-width: 100% !important;
+                }
+
+                /* Fix wedding details box */
+                .wedding-details-box {
+                    max-width: 100% !important;
+                    width: calc(100% - 10px) !important;
+                    margin: 20px auto !important;
+                    padding: 20px 15px !important;
+                    overflow: hidden !important;
+                }
+
+                .wedding-details-box h3,
+                .wedding-details-box h4 {
+                    font-size: 16px !important;
+                    line-height: 1.4 !important;
+                    word-wrap: break-word !important;
+                }
+
+                .wedding-details-box .venue {
+                    font-size: 18px !important;
+                }
+
+                .wedding-details-box .time-info {
+                    font-size: 14px !important;
+                }
+
+                .wedding-details-box .date-display {
+                    flex-wrap: nowrap !important;
+                    overflow-x: auto !important;
+                }
+
+                .wedding-details-box .address-info {
+                    font-size: 14px !important;
+                    line-height: 1.6 !important;
+                    word-wrap: break-word !important;
+                }
+
+                .wedding-details-box .invitation-text {
+                    font-size: 14px !important;
+                    line-height: 1.6 !important;
+                }
+
+                /* Fix countdown */
+                .countdown-boxes {
+                    gap: 8px !important;
+                    flex-wrap: wrap !important;
+                }
+
+                .countdown-box {
+                    padding: 12px 8px !important;
+                    min-width: 70px !important;
+                }
+
+                .countdown-box .number {
+                    font-size: 28px !important;
+                }
+
+                .countdown-box .label {
+                    font-size: 11px !important;
+                }
+
+                /* Fix calendar */
+                .calendar-grid {
+                    gap: 3px !important;
+                }
+
+                .calendar-day,
+                .calendar-header {
+                    padding: 8px 5px !important;
+                    font-size: 13px !important;
+                }
+
+                /* Fix map */
+                .map-container {
+                    width: 100% !important;
+                    overflow: hidden !important;
+                }
+
+                .map-container iframe {
+                    height: 250px !important;
+                    width: 100% !important;
+                }
+
+                /* Fix timeline */
+                .timeline-icon {
+                    width: 35px !important;
+                    height: 35px !important;
+                }
+
+                .timeline-content .time {
+                    font-size: 16px !important;
+                }
+
+                .timeline-content .label {
+                    font-size: 13px !important;
+                }
+
+                /* Fix RSVP form */
+                .rsvp-section {
+                    padding: 30px 15px !important;
+                }
+
+                .form-row input,
+                .form-row select,
+                .form-row textarea {
+                    font-size: 14px !important;
+                    width: 100% !important;
+                }
+
+                /* Fix all images */
+                img {
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+
+                /* Fix envelope iframe */
+                .envelope-section iframe {
+                    max-width: 100% !important;
+                    height: 380px !important;
+                }
+
+                /* Ngăn overflow cho tất cả sections */
+                .section {
+                    overflow-x: hidden !important;
+                    max-width: 100% !important;
+                    width: 100% !important;
+                }
+
+                /* Fix date badge */
+                .date-badge {
+                    padding: 15px !important;
+                }
+
+                .date-badge .date {
+                    font-size: 28px !important;
+                }
+
+                .date-badge .invite {
+                    font-size: 13px !important;
+                }
+
+                /* Fix final message */
+                .final-message {
+                    padding: 20px 10px !important;
+                }
+
+                .final-message h3 {
+                    font-size: 18px !important;
+                    line-height: 1.5 !important;
+                }
+
+                .final-image {
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+
+                /* Override animation delays on mobile */
+                .thiep-mung-animation,
+                .le-vu-quy-animation,
+                .bride-name-animation,
+                .heart-animation,
+                .groom-name-animation {
+                    animation: none !important;
+                    opacity: 1 !important;
+                    transform: none !important;
+                }
+
+                /* Fix gallery modal on mobile */
+                .gallery-modal {
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+
+                .gallery-header {
+                    padding: 15px 10px !important;
+                }
+
+                .gallery-header h2 {
+                    font-size: 18px !important;
+                }
+
+                .gallery-close {
+                    top: 10px !important;
+                    right: 10px !important;
+                    font-size: 30px !important;
+                    width: 35px !important;
+                    height: 35px !important;
+                }
+
+                .gallery-main {
+                    padding: 10px !important;
+                }
+
+                .gallery-image-container {
+                    max-width: 95% !important;
+                    max-height: 70vh !important;
+                }
+
+                .gallery-image-container img {
+                    max-height: 70vh !important;
+                }
+
+                .gallery-nav {
+                    font-size: 20px !important;
+                    padding: 8px 12px !important;
+                }
+
+                .gallery-nav.prev {
+                    left: 5px !important;
+                }
+
+                .gallery-nav.next {
+                    right: 5px !important;
+                }
+
+                .gallery-thumb {
+                    width: 55px !important;
+                    height: 55px !important;
+                }
+
+                .gallery-counter {
+                    font-size: 12px !important;
+                    padding: 6px 12px !important;
+                    bottom: 10px !important;
+                }
+
+                .gallery-thumbnails {
+                    padding: 10px !important;
+                    gap: 8px !important;
+                }
+
+                /* Fix thank you modal */
+                .thank-you-modal {
+                    padding: 10px !important;
+                }
+
+                .thank-you-content {
+                    max-width: 95% !important;
+                    padding: 25px 15px !important;
+                }
+
+                .thank-you-image {
+                    width: 100px !important;
+                    height: 100px !important;
+                }
+
+                /* Fix snow/heart animations */
+                .snowflakes {
+                    overflow: hidden !important;
+                }
+
+                .snowflake {
+                    font-size: 16px !important;
+                }
+
+                /* Fix music toggle */
+                #music-toggle {
+                    width: 45px !important;
+                    height: 45px !important;
+                    bottom: 15px !important;
+                    right: 15px !important;
+                }
+            }
         </style>
         <section class="wedding-album">
             <div class="album-header">
                 <h2>OUR MOMENTS <span>of love</span></h2>
             </div>
 
-            <div class="album-grid">
-                <div class="album-left">
-                    <div class="photo-box photo-left-2" style="height:650px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/c97a37e5e6406b1e32514_dmlvsy.jpg"
-                            alt="Wedding 2">
-                    </div>
-                    <div class="photo-box photo-left-1" style="height:650px;">
+            <!-- Grid Layout 3 cột giống hình mẫu -->
+            <div class="album-grid-new">
+                <!-- Cột 1 -->
+                <div class="album-column">
+                    <!-- Ảnh 1: Cao vừa -->
+                    <div class="photo-box" style="height: 180px;">
                         <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/34341376146256425053_sblzam.jpg"
                             alt="Wedding 1">
                     </div>
-                    <div class="photo-box photo-left-3" style="height:650px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/291524435533552197011_nl6sma.jpg"
-                            alt="Wedding 3">
-                    </div>
-                    <!-- <div class="photo-box photo-right-3" style="height: 250px; ">
+                    <!-- Ảnh 2: Cao vừa -->
+                    <div class="photo-box" style="height: 180px;">
                         <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/9f0d094ed8eb55b50cfa14_ylmyvj.jpg"
-                            alt="Wedding 9">
-                    </div> -->
-                    <!-- <div class="photo-box photo-right-4" style="height: 250px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/671d785aa9ff24a17dee13_it271q.jpg"
-                            alt="Wedding 10">
-                    </div>
-                   
-                    <div class="photo-box photo-left-6" style="height: 303px;">
-                       <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7112222159484253846_traixt.jpg"
-                            alt="Wedding 6">
-                    </div> -->
-
-                </div>
-                <div class="album-right">
-                    <div class="photo-box photo-left-7" style="height: 340px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/9f0d094ed8eb55b50cfa14_ylmyvj.jpg"
-                            alt="Wedding 7">
-                    </div>
-                    <div class="photo-box photo-right-1" style="height:369px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg"
-                            alt="Wedding 7">
-                    </div>
-                    <!-- <div class="photo-box photo-right-2" style="height: 250px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/dfcf2047f1e27cbc25f37_nwykbw.jpg"
-                            alt="Wedding 8">
-                   </div> -->
-                    <!-- <div class="photo-box photo-right-3" style="height: 250px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/291524435533552197011_nl6sma.jpg"
-                            alt="Wedding 9">
-                    </div>
-                    <div class="photo-box photo-right-4" style="height: 250px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/671d785aa9ff24a17dee13_it271q.jpg"
-                            alt="Wedding 10">
-                    </div>
-                   
-                    <div class="photo-box photo-left-6" style="height: 303px;">
-                       <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7112222159484253846_traixt.jpg"
-                            alt="Wedding 6">
-                    </div> -->
-
-                </div>
-                <div class="album-left">
-                    <div class="photo-box photo-left-2" style="height:653px; width: auto; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/ba57990f48aac5f49cbb12_bv469p.jpg"
                             alt="Wedding 2">
                     </div>
-                    <div class="photo-box photo-left-1" style="height:650px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/b88057e786420b1c525310_uykxg2.jpg"
-                            alt="Wedding 1">
-                    </div>
-                    <div class="photo-box photo-left-3" style="height:650px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/43313903013787524732_dymgb1.jpg"
+                    <!-- Ảnh 3: Cao nhất -->
+                    <div class="photo-box" style="height: 240px;">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/ba57990f48aac5f49cbb12_bv469p.jpg"
                             alt="Wedding 3">
                     </div>
-                    <!-- <div class="photo-box photo-right-3" style="height: 250px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/9f0d094ed8eb55b50cfa14_ylmyvj.jpg"
-                            alt="Wedding 9">
-                    </div> -->
-                    <!-- <div class="photo-box photo-right-4" style="height: 250px; ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/671d785aa9ff24a17dee13_it271q.jpg"
-                            alt="Wedding 10">
+                </div>
+
+                <!-- Cột 2 - Giữa (1 ảnh lớn) -->
+                <div class="album-column">
+                    <!-- Ảnh trung tâm: Rất cao -->
+                    <div class="photo-box" style="height: 604px;">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/dfcf2047f1e27cbc25f37_nwykbw.jpg"
+                            alt="Wedding Center">
                     </div>
-                   
-                    <div class="photo-box photo-left-6" style="height: 303px; ;">
-                       <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7112222159484253846_traixt.jpg"
+                </div>
+
+                <!-- Cột 3 -->
+                <div class="album-column">
+                    <!-- Ảnh 4: Cao nhất -->
+                    <div class="photo-box" style="height: 240px;">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg"
+                            alt="Wedding 4">
+                    </div>
+                    <!-- Ảnh 5: Cao vừa -->
+                    <div class="photo-box" style="height: 180px;">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/b88057e786420b1c525310_uykxg2.jpg"
+                            alt="Wedding 5">
+                    </div>
+                    <!-- Ảnh 6: Cao vừa -->
+                    <div class="photo-box" style="height: 180px;">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/43313903013787524732_dymgb1.jpg"
                             alt="Wedding 6">
-                    </div> -->
-
+                    </div>
                 </div>
-
             </div>
-           <div class="album-grid" style="height: 200px; padding-top: 5px;">
-                <div class="album-right" style="background-color: #7a1f1f; width: 50%;">
-                    <!-- <div class="photo-box photo-right-2" style="height: 250px;  ">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/51611802254825238_igqncx.jpg"
-                            alt="Wedding 8">
-                    </div> -->
-                    <div class="photo-box photo-right-3" style="height: 250px;  ">
+
+            <!-- Hàng thứ 2: 3 cột chia đều -->
+            <div class="album-grid-new" style="margin-top: 2px;">
+                <!-- Ảnh 7 -->
+                <div class="album-column">
+                    <div class="photo-box" style="height: 200px;">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/c97a37e5e6406b1e32514_dmlvsy.jpg"
+                            alt="Wedding 7">
+                    </div>
+                </div>
+                <!-- Ảnh 8 -->
+                <div class="album-column">
+                    <div class="photo-box" style="height: 200px;">
                         <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7635445704245426169_xetyps.jpg"
+                            alt="Wedding 8">
+                    </div>
+                </div>
+                <!-- Ảnh 9 -->
+                <div class="album-column">
+                    <div class="photo-box" style="height: 200px;">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/291524435533552197011_nl6sma.jpg"
                             alt="Wedding 9">
                     </div>
-                    <!-- <div class="photo-box photo-right-4" style="height: 250px; ">
-                            <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/671d785aa9ff24a17dee13_it271q.jpg"
-                                alt="Wedding 10">
-                        </div>
-    
-                        <div class="photo-box photo-left-6" style="height: 303px;   ">
-                            <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7112222159484253846_traixt.jpg"
-                                alt="Wedding 6">
-                        </div> -->
-    
                 </div>
-                <div class="album-left" style="background-color: #7a1f1f; width: 50%;">
-                        <!-- <div class="photo-box photo-right-2" style="height: 250px;  ">
-                            <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/671d785aa9ff24a17dee13_it271q.jpg"
-                                alt="Wedding 8">
-                        </div> -->
-                        <div class="photo-box photo-right-3" style="height: 250px;  ">
-                            <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/291524435533552197011_nl6sma.jpg"
-                                alt="Wedding 9">
-                        </div>
-                    <!-- <div class="photo-box photo-right-4" style="height: 250px; ">
-                            <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/671d785aa9ff24a17dee13_it271q.jpg"
-                                alt="Wedding 10">
-                        </div>
-    
-                        <div class="photo-box photo-left-6" style="height: 303px;   ">
-                            <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7112222159484253846_traixt.jpg"
-                                alt="Wedding 6">
-                        </div> -->
-    
-                </div>
-           </div>
+            </div>
+
             <div class="album-footer">
                 <button class="see-album-btn" onclick="openFullAlbum()">SEE ALBUM</button>
             </div>
         </section>
-
-
         <!-- Countdown -->
         <div class="section countdown-section">
             <h2 class="countdown-title">/ Thời gian /</h2>
