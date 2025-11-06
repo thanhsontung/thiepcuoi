@@ -52,7 +52,7 @@
         }
 
         /* Ngăn scroll ngang trên mobile */
-        @media (max-width: 400px) {
+        @media (max-width: 370px) {
 
             html,
             body {
@@ -1076,6 +1076,7 @@
             transition: all 0.3s ease;
             user-select: none;
             backdrop-filter: blur(10px);
+            z-index: 2;
         }
 
         .gallery-nav:hover {
@@ -2658,16 +2659,16 @@
                 font-size: 1.2rem;
                 font-weight: 700;
                 margin: 0;
-                color: #c20b0b;
+                color: ##d85252;
                 display: block;
             }
 
             /* main title */
             .header-section .couple-names.le-vu-quy-animation {
-                font-size: 2rem;
+                font-size: 17px;
                 font-weight: 700;
                 margin: 0;
-                color: #c20b0b;
+                color: #e85656; 
             }
 
             /* couple row: bride - heart - groom */
@@ -2701,11 +2702,11 @@
                 <h9 class="thiep-mung-animation">Thiệp Mừng</h9>
                 <h1 class="couple-names le-vu-quy-animation">Lễ Vu Quy</h1>
                 <div class="couple-row">
-                    <h1 class="bride-name">Sơn Thị<br>Bích Trâm</h1>
+                    <h1 class="bride-name" style="font-family: Great Vibes, cursive;">Sơn Thị<br>Bích Trâm</h1>
                     <span class="mini-heart-icon heart-animation"><img
                             src="https://res.cloudinary.com/devdnfoyh/image/upload/v1761645381/capdoi_uz3ou9.png"
                             alt="♥"></span>
-                    <h1 class="groom-name">Pan Guihuang</h1>
+                    <h1 class="groom-name" style="font-family: Great Vibes, cursive;">Pan Guihuang</h1>
                 </div>
             </div>
         </div>
@@ -2717,7 +2718,7 @@
                 .couple-row {
                     display: flex !important;
                     flex-direction: column !important;
-                    align-items: center !important;
+                    align-items: self-end !important;
                     gap: 6px !important;
                 }
 
@@ -2885,10 +2886,11 @@
     /* border-radius: 10px; */
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
     /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
-    font-weight: bold;
-    color: #990000; 
-    top: -72px;
-    left: 221px;">Thân mời quý khách và bạn bè
+        font-weight: bold;
+    color: #990000;
+        top: -66px;
+    left: 202px;
+    left: 207px;">Thân mời quý khách và bạn bè
                     đến chung vui trong lễ cưới của chúng mình.</h4>
             </div>
             <!-- Xóa ảnh riêng biệt -->
@@ -2919,52 +2921,89 @@
                     <h4 class="venue" style="margin: 0px;">Dự lễ VU QUY tại</h4>
                     <div class="venue" style="margin: 0px;">Tư Gia</div>
                     <div class="venue" style="margin: 0px;">vào lúc 09:00 - CHỦ NHẬT</div>
-                    <div class="date-display" style="color: #A63736; margin-bottom: 3px;">
-                        <span class="date-num" style="color: #A63736; margin-bottom: 3px;">30</span>
-                        <div class="date-divider" style="color: #A63736; margin-bottom: 3px;"></div>
-                        <span class="date-num" style="color: #A63736; margin-bottom: 3px;">11</span>
-                        <div class="date-divider" style="color: #A63736; margin-bottom: 3px;"></div>
-                        <span class="date-num" style="color: #A63736; margin-bottom: 3px;">2025</span>
+                    <div class="date-display" style="color: rgb(194, 14, 14); margin-bottom: 3px;">
+                        <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">30</span>
+                        <div class="date-divider" style="color: #rgb(194, 14, 14); margin-bottom: 3px;"></div>
+                        <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">11</span>
+                        <div class="date-divider" style="color: rgb(194, 14, 14); margin-bottom: 3px;"></div>
+                        <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">2025</span>
                     </div>
 
                     <div class="couple-and">
                         <div
-                            style="display: flex; justify-content: space-between; align-items: center; gap: 15px; margin: 0px 0;">
-                            <h3 style="font-family: 'Playfair Display', serif; 
-                                       font-size: 24px; 
-                                       color: #dc143c; 
-                                       font-weight: 700;
-                                       letter-spacing: 1px;
-                                       text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(0, 0, 0, 0.3);
-                                       margin: 0; flex: 1; text-align: right;">
+                            style="display: flex; justify-content: space-between; align-items: center; gap: 20px; margin: 0; padding: -110px 0;">
+                            <h3 style="font-family: 'Dancing Script', 'Playfair Display', serif; 
+                                       font-size: 26px; 
+                                       color: rgb(194, 14, 14); 
+                                       font-weight: 600;
+                                       letter-spacing: 0.5px;
+                                    top: 100px;
+                                       margin: 0; flex: 1; text-align: right;
+                                       line-height: 1.3;
+                                       text-decoration: none;
+                                       background: linear-gradient(45deg,rgb(194, 14, 14),rgb(194, 14, 14));
+                                      
+                                       background-clip: text;
+                                       " style="font-family: Great Vibes, cursive;">
                                 Sơn Thị Bích Trâm</h3>
-                            <span class="mini-heart-icon" style="flex-shrink: 0;"><img
+                            <span class="mini-heart-icon" style="flex-shrink: 0; margin: 0 0px;"><img
                                     src="https://cdn-resource.cinelove.me/resources/happiness/m2v6vni968nbrqikk3xawv.png"
                                     alt="♥"
-                                    style="transform: rotate(0deg) !important; transition: transform 0.3s ease !important;"></span>
-                            <h3 style="font-family: 'Playfair Display', serif; 
-                                       font-size: 25px; 
-                                       color: #dc143c; 
-                                       font-weight: 700;
-                                       letter-spacing: 1px;
-                                       text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9), 1px 1px 2px rgba(0, 0, 0, 0.3);
-                                       margin: 0; flex: 1; text-align: left;">
+                                    style="transform: rotate(0deg) !important; transition: transform 0.3s ease !important; width: 28px; height: 28px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));"></span>
+                            <h3 style="font-family: 'Dancing Script', 'Playfair Display', serif; 
+                                       font-size: 26px; 
+                                       color: rgb(194, 14, 14); 
+                                       font-weight: 600;
+                                       letter-spacing: 0.5px;
+                                       margin: 0; flex: 1; text-align: left;
+                                       line-height: 1.3;
+                                       background: linear-gradient(45deg,rgb(194, 14, 14));
+                                       
+                                       background-clip: text;">
                                 Pan Guihuang</h3>
                         </div>
                     </div>
 
-                    <h3>Trân trọng kính mời</h3>
+                    <h3 style="font-family: 'Crimson Text', 'Georgia', serif; 
+                              font-size: 20px; 
+                              color: rgb(194, 14, 14); 
+                              font-weight: 500; 
+                              text-align: center; 
+                              margin: 20px 0 15px 0; 
+                              letter-spacing: 1px;
+                              text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+                              font-style: italic;">
+                        ～ Trân trọng kính mời ～</h3>
 
-                    <div class="address-info">
-                        Tư Gia<br>
+                    <div class="address-info" style="font-family: 'Crimson Text', 'Times New Roman', serif; 
+                                                    font-size: 16px; 
+                                                    color: rgb(194, 14, 14); 
+                                                    text-align: center; 
+                                                    line-height: 1.6; 
+                                                    margin: 15px 0;
+                                                    font-weight: 500;
+                                                    letter-spacing: 0.3px;">
+                        <strong style="color: rgb(194, 14, 14); font-size: 17px;">Tư Gia</strong><br>
                         Ấp giồng chùa A, xã An Ninh, thành phố Cần Thơ
                     </div>
 
-                    <div class="invitation-text">
+                    <div class="invitation-text" style="font-family: 'Crimson Text', 'Times New Roman', serif; 
+                                                       font-size: 15px; 
+                                                       color: rgb(194, 14, 14); 
+                                                       text-align: center; 
+                                                       line-height: 1.7; 
+                                                       margin: 20px 0;
+                                                       font-weight: 400;
+                                                       letter-spacing: 0.2px;
+                                                       text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+                                                       background:(255, 255, 255, 0.1);
+                                                       padding: 15px 10px;
+                                                       border-radius: 8px;
+                                                       box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                         Trân trọng mời bạn và gia đình đến dự lễ cưới<br>
-                        của chúng mình.<br>
-                        Sự hiện diện của Bạn là niềm vinh hạnh của<br>
-                        Gia đình Tôi
+                        của chúng mình.<br><br>
+                        <em style="color: ; font-size: 14px;">Sự hiện diện của Bạn là niềm vinh hạnh của<br>
+                        Gia đình Tôi</em> ✨
 
                     </div>
                 </div> <!-- Đóng div wrapper -->
@@ -3325,9 +3364,9 @@
                 .couple-names-container {
                     display: flex !important;
                     flex-direction: column !important;
-                    align-items: center !important;
+                    align-items: self-end !important;
                     gap: 10px !important;
-                    margin: 15px 0 !important;
+                    margin: 0px 0 !important;
                     width: 100% !important;
                     justify-content: center !important;
                 }
@@ -3740,8 +3779,9 @@
 
             <div class="map-container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!3d3477.597552765595!2d105.92455140993565!3d9.644761479008016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a051a65f18f905%3A0x63a0d57409a80bab!2zMjM0IOG6pHAgQW4gVHLhuqFjaCwgQW4gSGnhu4dwLCBDaMOidSBUaMOgbmgsIFPDs2MgVHLEg25nLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2sus!4v1761665546851!5m2!1svi!2sus"
-                    allowfullscreen="" loading="lazy"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3477.59659337964!2d105.92457197502662!3d9.64485449044316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzgnNDEuNSJOIDEwNcKwNTUnMzcuNyJF!5e1!3m2!1svi!2s!4v1762442252118!5m2!1svi!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div class="address">
@@ -4495,25 +4535,25 @@
             });
         });
         // // Scroll Animation cho Photo Gallery
-        // function handleScrollAnimation() {
-        //     const photoItems = document.querySelectorAll('.photo-item');
+        function handleScrollAnimation() {
+            const photoItems = document.querySelectorAll('.photo-item');
 
-        //     photoItems.forEach(item => {
-        //         const rect = item.getBoundingClientRect();
-        //         const windowHeight = window.innerHeight;
+            photoItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
 
-        //         // Khi phần tử vào viewport
-        //         if (rect.top < windowHeight * 0.85) {
-        //             item.classList.add('visible');
-        //         }
-        //     });
-        // }
+                // Khi phần tử vào viewport
+                if (rect.top < windowHeight * 0.85) {
+                    item.classList.add('visible');
+                }
+            });
+        }
 
         // // Chạy khi scroll
-        // window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('scroll', handleScrollAnimation);
 
         // // Chạy lần đầu khi load trang
-        // window.addEventListener('load', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
         // Scroll Animation cho Photo Gallery với hiệu ứng riêng
         function handleScrollAnimation() {
             const photoItems = document.querySelectorAll('.photo-item');
@@ -4557,15 +4597,29 @@
         let currentImageIndex = 0;
 
         function openFullAlbum() {
+            console.log('Opening gallery...');
             const modal = document.getElementById('galleryModal');
+
+            if (!modal) {
+                console.error('Gallery modal not found!');
+                return;
+            }
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Ngăn scroll background
 
-            // Tạo thumbnails
-            createThumbnails();
+            // Small delay to ensure DOM is ready and prevent auto-close
+            setTimeout(() => {
+                // Tạo thumbnails
+                createThumbnails();
 
-            // Hiển thị ảnh đầu tiên
-            showImage(0);
+                // Hiển thị ảnh đầu tiên
+                showImage(0);
+
+                // Force the modal to stay open
+                modal.classList.add('active');
+                console.log('Gallery opened successfully');
+            }, 50);
         }
 
         function closeGallery() {
@@ -4575,8 +4629,20 @@
         }
 
         function createThumbnails() {
+            console.log('Creating thumbnails...');
             const thumbnailsContainer = document.getElementById('galleryThumbnails');
+
+            if (!thumbnailsContainer) {
+                console.error('Thumbnails container not found!');
+                return;
+            }
+
             thumbnailsContainer.innerHTML = ''; // Clear existing
+
+            if (!albumImages || albumImages.length === 0) {
+                console.error('No album images found!');
+                return;
+            }
 
             albumImages.forEach((src, index) => {
                 const thumb = document.createElement('div');
@@ -4591,18 +4657,35 @@
                 thumb.onclick = () => showImage(index);
                 thumbnailsContainer.appendChild(thumb);
             });
+
+            console.log(`Created ${albumImages.length} thumbnails`);
         }
 
         function showImage(index) {
+            console.log(`Showing image ${index + 1}`);
             currentImageIndex = index;
 
             // Update main image
             const mainImg = document.getElementById('galleryImage');
+            if (!mainImg) {
+                console.error('Gallery main image element not found!');
+                return;
+            }
+
+            if (!albumImages[index]) {
+                console.error(`Album image at index ${index} not found!`);
+                return;
+            }
+
             mainImg.src = albumImages[index];
+            console.log(`Set image src to: ${albumImages[index]}`);
 
             // Update counter
-            document.getElementById('currentImageIndex').textContent = index + 1;
-            document.getElementById('totalImages').textContent = albumImages.length;
+            const currentCounter = document.getElementById('currentImageIndex');
+            const totalCounter = document.getElementById('totalImages');
+
+            if (currentCounter) currentCounter.textContent = index + 1;
+            if (totalCounter) totalCounter.textContent = albumImages.length;
 
             // Update active thumbnail
             const thumbs = document.querySelectorAll('.gallery-thumb');
@@ -4695,7 +4778,18 @@
                 });
             });
 
-            // Close modal when clicking outside the image
+            // Prevent gallery modal from auto-closing
+            const galleryModal = document.getElementById('galleryModal');
+            if (galleryModal) {
+                galleryModal.addEventListener('click', function (e) {
+                    // Only close if clicking on the modal background, not content
+                    if (e.target === this) {
+                        closeGallery();
+                    }
+                });
+            }
+
+            // Close photo modal when clicking outside the image
             document.getElementById('photoModal').addEventListener('click', function (e) {
                 if (e.target === this) {
                     closePhotoModal();
@@ -4721,6 +4815,11 @@
                 // Find elements with a computed animation (non-infinite) and opt them into scroll-trigger
                 document.querySelectorAll('body *').forEach(el => {
                     try {
+                        // Skip gallery modal elements to prevent interference
+                        if (el.closest('#galleryModal') || el.id === 'galleryModal') {
+                            return;
+                        }
+
                         const cs = getComputedStyle(el);
                         if (isAnimatable(el, cs)) {
                             // store the computed shorthand animation to restore later
