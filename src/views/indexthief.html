@@ -137,7 +137,7 @@
         .header-section {
             text-align: center;
             /* padding: 40px 20px 20px 20px; */
-            min-height: 200px;
+            min-height: 165px;
             /* background-image: url('https://res.cloudinary.com/devdnfoyh/image/upload/v1762251502/BG_Thongtindautrang_gh6ssw.png'); */
             background-size: 40%;
             background-position: center;
@@ -562,8 +562,8 @@
 
         .decorative-header h4 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 900;
             color: #A63736;
             letter-spacing: 2px;
             margin: 0;
@@ -1158,7 +1158,7 @@
         }
 
         /* Mobile responsive */
-    @media (max-width: 400px) {
+        @media (max-width: 400px) {
             .gallery-header h2 {
                 font-size: 22px;
             }
@@ -1586,7 +1586,7 @@
         }
 
         .final-image {
-            width: 160px;
+            width: 185px;
             margin: 30px auto 0;
             display: block;
         }
@@ -2685,7 +2685,8 @@
                 font-size: 1.25rem;
                 margin: 0;
                 font-weight: 600;
-                color: #    c20b0b; /* use inherited color where set */
+                color: # c20b0b;
+                /* use inherited color where set */
             }
 
             .header-section .mini-heart-icon img {
@@ -2733,14 +2734,20 @@
                     order: 2;
                 }
 
-                .bride-name { order: 1; }
-                .groom-name { order: 3; }
+                .bride-name {
+                    order: 1;
+                }
+
+                .groom-name {
+                    order: 3;
+                }
             }
         </style>
 
         <style>
             /* Slide-up fade-in for the four header elements on small narrow screens <=470x900 */
             @media (max-width: 500px) {
+
                 .header-section .thiep-mung-animation,
                 .header-section .couple-names.le-vu-quy-animation,
                 .header-section .bride-name,
@@ -2752,8 +2759,15 @@
             }
 
             @keyframes slideUpFadeIn {
-                from { opacity: 0; transform: translateY(12px); }
-                to { opacity: 1; transform: translateY(0); }
+                from {
+                    opacity: 0;
+                    transform: translateY(12px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         </style>
 
@@ -2775,8 +2789,8 @@
                     alt="Overlay Decoration" style="position: absolute;
                     position: absolute;
     top: 16%;
-    left: 11%;
-    transform: translate(-57%, -50%) rotate(15deg);
+    left: 7%;
+    transform: translate(-57%, -50%) rotate(30deg);
     max-width: 94px;
     width: 7%;
     height: auto;
@@ -2790,8 +2804,8 @@
                     alt="Overlay Decoration" style="position: absolute;
                     position: absolute;
     top: 56%;
-    left: 7%;
-    transform: translate(-57%, -50%) rotate(13deg);
+    left: 6%;
+    transform: translate(-57%, -50%) rotate(15deg);
     max-width: 94px;
     width: 21%;
     height: auto;
@@ -2804,9 +2818,9 @@
 
                 <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
                     alt="Overlay Decoration" style="position: absolute;
-    top: 76%;
+    top: 71%;
     left: 18%;
-    transform: translate(-57%, -50%) rotate(13deg);
+    transform: translate(-57%, -50%) rotate(17deg);
     max-width: 94px;
     width: 9%;
     height: auto;
@@ -2820,8 +2834,8 @@
                     alt="Right Overlay Decoration" style="position: absolute;
                                         position: absolute;
                         position: absolute;
-    top: 25%;
-    right: 14%;
+        top: 20%;
+    right: 6%;
     transform: translate(74%, -76%) rotate(14deg);
     max-width: 94px;
     width: 8%;
@@ -2834,9 +2848,9 @@
                 <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
                     alt="Right Overlay Decoration" style="position: absolute;
                                         position: absolute;
-                        top: 76%;
-                        right: 14%;
-                        transform: translate(74%, -76%) rotate(0deg);
+                           top: 89%;
+    right: 21%;
+                        transform: translate(74%, -76%) rotate(8deg);
                         max-width: 94px;
                         width: 19%;
                         height: auto;
@@ -2849,8 +2863,8 @@
                     alt="Right Overlay Decoration" style="position: absolute;
                                     position: absolute;
                     position: absolute;
-                    top: 80%;
-                    right: 18%;
+                    top: 54%;
+                    right: 7%;
                     transform: translate(74%, -76%) rotate(0deg);
                     max-width: 94px;
                     width: 9%;
@@ -3739,7 +3753,7 @@
         <!-- Wedding Album -->
         <style>
             .wedding_album {
-                max-width: 40   0px;
+                max-width: 40 0px;
                 width: 100%;
                 margin: 0 auto 50px;
                 background-color: #7a1f1f;
@@ -3787,6 +3801,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2px;
+                height: auto;
             }
 
             .album_right_child {
@@ -3794,6 +3809,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2px;
+                height: auto;
             }
 
             /* Photo Items */
@@ -3806,23 +3822,23 @@
 
             /* left_child column - 3 photos với tỷ lệ giống mẫu */
             .album_left_child .photo_item:nth-child(1) {
-                height: 298px;
+                height: 80%;
                 /* Ảnh đầu cao nhất */
             }
 
             .album_left_child .photo_item:nth-child(2) {
-                height: 288px;
+                height: 80%;
                 /* Ảnh giữa */
             }
 
             .album_left_child .photo_item:nth-child(3) {
-                height: 300px;
+                height: 80%;
                 /* Ảnh cuối cao nhất */
             }
 
             /* right_child column - 4 photos nhỏ hơn và đều nhau */
             .album_right_child .photo_item {
-                height: 221px;
+                height: 80%;
                 /* 4 ảnh đều nhau */
             }
 
@@ -4035,19 +4051,19 @@
 
                 /* Responsive heights on mobile */
                 .album_left_child .photo_item:nth-child(1) {
-                    height: 200px;
+                    height: 80%;
                 }
 
                 .album_left_child .photo_item:nth-child(2) {
-                    height: 180px;
+                    height: 80%;
                 }
 
                 .album_left_child .photo_item:nth-child(3) {
-                    height: 200px;
+                    height: 80%;
                 }
 
                 .album_right_child .photo_item {
-                    height: 150px;
+                    height: 80%;
                 }
 
                 .see_album_btn {
@@ -4070,19 +4086,19 @@
                 }
 
                 .album_left_child .photo_item:nth-child(1) {
-                    height: 210px;
+                    height: 80%;
                 }
 
                 .album_left_child .photo_item:nth-child(2) {
-                    height: 190px;
+                    height: 80%;
                 }
 
                 .album_left_child .photo_item:nth-child(3) {
-                    height: 210px;
+                    height: 80%;
                 }
 
                 .album_right_child .photo_item {
-                    height: 152px;
+                    height: 80%;
                 }
             }
 
@@ -4102,7 +4118,7 @@
                 <!-- left_child Column - 54% -->
                 <div class="album_left_child">
                     <div class="photo_item" data-direction="left_child">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/34341376146256425053_sblzam.jpg"
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg"
                             alt="Wedding 1">
                     </div>
                     <div class="photo_item" data-direction="bottom_child">
@@ -4110,7 +4126,7 @@
                             alt="Wedding 2">
                     </div>
                     <div class="photo_item" data-direction="left_child">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/ba57990f48aac5f49cbb12_bv469p.jpg"
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/20355f978e32036c5a231_w4rjdm.jpg"
                             alt="Wedding 3">
                     </div>
                 </div>
@@ -4118,19 +4134,19 @@
                 <!-- right_child Column - 46% -->
                 <div class="album_right_child">
                     <div class="photo_item" data-direction="right_child">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/dfcf2047f1e27cbc25f37_nwykbw.jpg"
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/43313903013787524732_dymgb1.jpg"
                             alt="Wedding 4">
                     </div>
                     <div class="photo_item" data-direction="top">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/b88057e786420b1c525310_uykxg2.jpg"
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/51611802254825238_igqncx.jpg"
                             alt="Wedding 5">
                     </div>
                     <div class="photo_item" data-direction="right_child">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/43313903013787524732_dymgb1.jpg"
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7635445704245426169_xetyps.jpg"
                             alt="Wedding 6">
                     </div>
                     <div class="photo_item" data-direction="bottom_child">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg"
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7112222159484253846_traixt.jpg"
                             alt="Wedding 7">
                     </div>
                 </div>
@@ -4247,7 +4263,9 @@
 
         <!-- Final Message -->
         <div class="section final-message">
-            <h3>Hẹn gặp bạn tại tiệc cưới<br>của chúng mình!</h3>
+            <h3 style="font-size: small;">Cảm ơn mọi người đã gửi lời chúc và dành thời gian cho hai đứa em/mình!
+                Sự hiện diện của mọi người là món quà quý giá nhất trong ngày đặc biệt này.
+                Chúng em/mình thật sự hạnh phúc và trân quý! 💖</h3>
             <img class="final-image"
                 src="https://w.ladicdn.com/s500x550/5c728619c417ab07e5194baa/y6cllpmkwhbu44j6iprxdq-20250812034749-ej4j_.png"
                 alt="Final">
@@ -4684,7 +4702,7 @@
                 }
             });
         });
-        
+
         /* Auto-convert on-load animations to scroll-triggered (opt-in) */
         (function () {
             function isAnimatable(el, cs) {
@@ -4706,7 +4724,11 @@
                         const cs = getComputedStyle(el);
                         if (isAnimatable(el, cs)) {
                             // store the computed shorthand animation to restore later
-                            const anim = cs.animation || [cs.animationName, cs.animationDuration, cs.animationTimingFunction, cs.animationDelay, cs.animationIterationCount, cs.animationDirection, cs.animationFillMode].join(' ');
+                            const anim = cs.animation || [cs.animationName, cs.animationDuration, cs
+                                .animationTimingFunction, cs.animationDelay, cs
+                                .animationIterationCount, cs.animationDirection, cs
+                                .animationFillMode
+                            ].join(' ');
                             el.dataset._origAnimation = anim;
                             el.classList.add('animate-on-scroll');
                             // prevent it running on load
@@ -4724,7 +4746,8 @@
 
                 // inject minimal helper CSS if not present
                 const style = document.createElement('style');
-                style.textContent = '.animate-on-scroll{opacity:0;transform:translateY(12px);will-change:opacity,transform}.animate-on-scroll.in-view{opacity:1;transform:none}';
+                style.textContent =
+                    '.animate-on-scroll{opacity:0;transform:translateY(12px);will-change:opacity,transform}.animate-on-scroll.in-view{opacity:1;transform:none}';
                 document.head.appendChild(style);
 
                 const io = new IntersectionObserver((entries, obs) => {
@@ -4739,7 +4762,11 @@
                             obs.unobserve(el); // one-shot
                         }
                     });
-                }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+                }, {
+                    root: null,
+                    rootMargin: '0px 0px -10% 0px',
+                    threshold: 0.12
+                });
 
                 candidates.forEach(el => io.observe(el));
             });
