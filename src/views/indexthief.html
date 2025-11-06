@@ -52,7 +52,7 @@
         }
 
         /* Ngăn scroll ngang trên mobile */
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
 
             html,
             body {
@@ -67,6 +67,7 @@
             max-width: 420px;
             margin: 0 auto;
             padding: 6px;
+            color: #c20b0b !important;
             background: rgba(254, 240, 223, 0.95);
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
             overflow-x: hidden;
@@ -84,7 +85,7 @@
         }
 
         /* Mobile responsive */
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
             .container {
                 max-width: 100%;
                 padding: 3px;
@@ -967,269 +968,6 @@
             text-align: center;
         }
 
-        /* Wedding Album bố cục trái-phải */
-        .wedding-album-section {
-            margin: 50px 0;
-            padding: 0;
-            max-width: 800px;
-            margin: 50px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            display: flex;
-        }
-
-        /* Cột trái - Header và Footer */
-        .album-left {
-            width: 35%;
-            height: 700px;
-            background: #8B0000;
-            display: flex;
-            flex-direction: column;
-
-            /* padding: 5px 0px; */
-        }
-
-        .album-header {
-            text-align: center;
-            color: white;
-        }
-
-        .album-header h2 {
-            font-family: 'Georgia', serif;
-            font-size: 28px;
-            font-weight: bold;
-            margin: 0;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .album-header h3 {
-            font-family: 'Georgia', serif;
-            font-size: 32px;
-            font-weight: normal;
-            margin: 5px 0 0 0;
-            font-style: italic;
-            letter-spacing: 2px;
-        }
-
-        .album-footer {
-            text-align: center;
-        }
-
-        .btn-see-album-footer {
-            background: white;
-            color: #8B0000;
-            border: 2px solid white;
-            padding: 15px 35px;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-see-album-footer:hover {
-            background: #8B0000;
-            color: white;
-            border-color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Cột phải - Grid ảnh */
-        .album-right {
-            width: 65%;
-            /* padding: 10px; */
-            background: white;
-            height: 700px;
-        }
-
-        /* Container ảnh */
-        .album-right .container-fluid {
-            padding: 0 !important;
-            height: 100%;
-        }
-
-        .album-right .row {
-            margin: 0 !important;
-            height: 100%;
-        }
-
-        .album-right .col-6 {
-            padding: 5px !important;
-        }
-
-        /* CSS ảnh vừa khung hình */
-        .album-photo {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #f0f0f0;
-            height: 100%;
-            min-height: 150px;
-        }
-
-        .album-photo:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .album-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: transform 0.3s ease;
-            border-radius: 8px;
-        }
-
-        .album-photo:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Responsive cho mobile */
-        @media (max-width: 768px) {
-            .wedding-album-section {
-                flex-direction: column;
-                max-width: 95%;
-            }
-
-            .album-left,
-            .album-right {
-                width: 100%;
-            }
-
-
-            .album-header h2 {
-                font-size: 24px;
-            }
-
-            .album-header h3 {
-                font-size: 28px;
-            }
-        }
-
-        .album-photo {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0;
-            /* Không bo góc */
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #8B0000 !important;
-            /* Nền đỏ đậm */
-            height: 100%;
-        }
-
-        .album-photo:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .album-photo img {
-            transition: transform 0.3s ease;
-            object-fit: cover !important;
-            border-radius: 0;
-            /* Ảnh cũng không bo góc */
-        }
-
-        .album-photo:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Nút See Album với Bootstrap */
-        .btn-see-album {
-            background: linear-gradient(135deg, #8B0000 0%, #A63736 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
-        }
-
-        .btn-see-album:hover {
-            background: linear-gradient(135deg, #A63736 0%, #8B0000 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
-            color: white;
-        }
-
-        /* Responsive cho mobile */
-        @media (max-width: 768px) {
-            .wedding-album-section .row {
-                margin-bottom: 15px;
-            }
-
-            .album-photo {
-                height: 200px !important;
-            }
-        }
-
-        .see-album-btn {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .see-album-btn button {
-            background: linear-gradient(135deg, #8B0000 0%, #A63736 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
-        }
-
-        .see-album-btn button:hover {
-            background: linear-gradient(135deg, #A63736 0%, #8B0000 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .album-grid {
-                flex-direction: column;
-                height: auto;
-                gap: 10px;
-            }
-
-            .album-column {
-                flex-direction: row;
-                gap: 10px;
-            }
-
-            .album-photo {
-                height: 200px;
-            }
-
-            .small-photo {
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .album-column {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .album-photo {
-                height: 180px;
-            }
-        }
 
         /* Gallery Modal - Album đầy đủ */
         .gallery-modal {
@@ -1420,7 +1158,7 @@
         }
 
         /* Mobile responsive */
-        @media (max-width: 768px) {
+    @media (max-width: 400px) {
             .gallery-header h2 {
                 font-size: 22px;
             }
@@ -1501,7 +1239,7 @@
         }
 
         /* Responsive cho mobile */
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
             .photo-item {
                 padding: 20px 15px;
             }
@@ -1983,7 +1721,7 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
             .thank-you-content {
                 padding: 30px 20px;
             }
@@ -2263,7 +2001,7 @@
         }
 
         /* Responsive */
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
             .couple-names {
                 font-size: 18px;
             }
@@ -2392,7 +2130,7 @@
         }
 
         /* Responsive cho mobile */
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
 
             .photo-item,
             .photo-item.reverse {
@@ -2639,7 +2377,7 @@
             }
 
             /* Responsive */
-            @media (max-width: 480px) {
+            @media (max-width: 400px) {
                 .photo-item {
                     padding: 25px 15px;
                 }
@@ -2812,7 +2550,7 @@
             }
 
             /* Responsive */
-            @media (max-width: 480px) {
+            @media (max-width: 400px) {
                 .wedding-details-box {
                     padding: 25px 15px;
                 }
@@ -2868,8 +2606,8 @@
 
 <body>
     <!-- Opening Doors -->
-    <div class="cloud-door left-door"></div>
-    <div class="cloud-door right-door"></div>
+    <!-- <div class="cloud-door left-door"></div>
+    <div class="cloud-door right-door"></div> -->
 
     <!-- Music Toggle -->
     <div id="music-toggle">
@@ -2911,34 +2649,114 @@
             /* header styles */
             .header-section .levuquy {
                 text-align: center;
-                display: flex;
+                display: block;
                 padding: 20px 0;
             }
 
-            .header-section h9 {
-                font-size: 1.5em;
-                font-weight: bold;
+            /* small heading (Thiệp Mừng) */
+            .header-section .thiep-mung-animation {
+                font-size: 1.2rem;
+                font-weight: 700;
+                margin: 0;
+                color: #c20b0b;
+                display: block;
             }
 
-            .header-section h1 {
-                font-size: 2.5em;
-                font-weight: bold;
+            /* main title */
+            .header-section .couple-names.le-vu-quy-animation {
+                font-size: 2rem;
+                font-weight: 700;
+                margin: 0;
+                color: #c20b0b;
+            }
+
+            /* couple row: bride - heart - groom */
+            .header-section .couple-row {
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+                align-items: center;
+                /* Keep items on a single line by default */
+                flex-wrap: nowrap;
+                margin-top: 6px;
+            }
+
+            .header-section .couple-row h1 {
+                font-size: 1.25rem;
+                margin: 0;
+                font-weight: 600;
+                color: #    c20b0b; /* use inherited color where set */
+            }
+
+            .header-section .mini-heart-icon img {
+                width: 36px;
+                height: auto;
+                vertical-align: middle;
             }
         </style>
         <!-- header -->
         <div class="section header-section">
             <div class="levuquy">
-                <h9 class="thiep-mung-animation" style="margin: 0; color: #c20b0b;">Thiệp Mừng</h9>
-                <h1 class="couple-names le-vu-quy-animation" style="margin: 0; color: #c20b0b;">Lễ Vu Quy</h1>
-                <div style="display: flex;">
-                    <h1 class="">Sơn Thị Bích Trâm</h1>
+                <h9 class="thiep-mung-animation">Thiệp Mừng</h9>
+                <h1 class="couple-names le-vu-quy-animation">Lễ Vu Quy</h1>
+                <div class="couple-row">
+                    <h1 class="bride-name">Sơn Thị<br>Bích Trâm</h1>
                     <span class="mini-heart-icon heart-animation"><img
                             src="https://res.cloudinary.com/devdnfoyh/image/upload/v1761645381/capdoi_uz3ou9.png"
                             alt="♥"></span>
-                    <h1 class="">Pan Guihuang</h1>
+                    <h1 class="groom-name">Pan Guihuang</h1>
                 </div>
             </div>
         </div>
+
+        <style>
+            /* Small-screen: stack couple names and center them */
+            /* Stack only on very very small screens: keep row at 319px and below */
+            @media (max-width: 319px) {
+                .couple-row {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    gap: 6px !important;
+                }
+
+                .bride-name,
+                .groom-name {
+                    text-align: center !important;
+                    width: 100% !important;
+                    margin: 0 !important;
+                    font-size: 26px !important;
+                    line-height: 1.05 !important;
+                }
+
+                .mini-heart-icon {
+                    order: 2;
+                }
+
+                .bride-name { order: 1; }
+                .groom-name { order: 3; }
+            }
+        </style>
+
+        <style>
+            /* Slide-up fade-in for the four header elements on small narrow screens <=470x900 */
+            @media (max-width: 500px) {
+                .header-section .thiep-mung-animation,
+                .header-section .couple-names.le-vu-quy-animation,
+                .header-section .bride-name,
+                .header-section .mini-heart-icon img,
+                .header-section .groom-name {
+                    animation: slideUpFadeIn 1.0s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+                    will-change: transform, opacity;
+                }
+            }
+
+            @keyframes slideUpFadeIn {
+                from { opacity: 0; transform: translateY(12px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+
         <section class="section-1">
 
             <img class="main-photo"
@@ -2953,7 +2771,7 @@
                     src="https://w.ladicdn.com/s700x400/5c728619c417ab07e5194baa/e4666fdc-e982-4eae-bc29-7699635bde15-20250813065851-fb6dn.png"
                     alt="Decoration">
                 <!-- Ảnh mới overlay trên background -->
-                 <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
+                <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
                     alt="Overlay Decoration" style="position: absolute;
                     position: absolute;
     top: 16%;
@@ -2983,8 +2801,8 @@
     height: auto !important;
     display: block !important;
     ">
-    
-             <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
+
+                <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
                     alt="Overlay Decoration" style="position: absolute;
     top: 76%;
     left: 18%;
@@ -2998,7 +2816,7 @@
     height: auto !important;
     display: block !important;">
                 <!-- Thêm ảnh thứ 2 bên cạnh bên phải -->
-                 <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
+                <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
                     alt="Right Overlay Decoration" style="position: absolute;
                                         position: absolute;
                         position: absolute;
@@ -3027,8 +2845,8 @@
                         max-width: 25% !important;
                         height: auto;
                         display: block !important;">
-                    <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
-                                    alt="Right Overlay Decoration" style="position: absolute;
+                <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
+                    alt="Right Overlay Decoration" style="position: absolute;
                                     position: absolute;
                     position: absolute;
                     top: 80%;
@@ -3042,11 +2860,11 @@
                     max-width: 25% !important;
                     height: auto;
                     display: block !important;">
-                    <!-- chim en -->
+                <!-- chim en -->
 
 
-                    
-    <h4 style="    position: relative;
+
+                <h4 style="    position: relative;
     z-index: 4;
     /* background: rgba(255, 255, 255, 0.8); */
     /* padding: 15px 20px; */
@@ -3056,7 +2874,7 @@
     font-weight: bold;
     color: #990000; 
     top: -72px;
-    left: 228px;">Thân mời quý khách và bạn bè
+    left: 221px;">Thân mời quý khách và bạn bè
                     đến chung vui trong lễ cưới của chúng mình.</h4>
             </div>
             <!-- Xóa ảnh riêng biệt -->
@@ -3075,23 +2893,29 @@
                     alt="Second Background Overlay" style="position: absolute; top: 20%; right: 10%; transform: translate(50%, -50%); 
                             max-width: 120px; width: 35%; height: auto; opacity: 0.05; z-index: 0;">
                 <div style="position: relative; z-index: 1;">
-                    <h4>đến dự buổi tiệc rượu chung vui<br>cùng gia đình chúng tôi tại</h4>
-
-                    <div class="venue">Tư Gia</div>
-
-                    <div class="time-info">vào lúc 09:00 - CHỦ NHẬT</div>
-
-                    <div class="date-display">
-                        <span class="date-num">30</span>
-                        <div class="date-divider"></div>
-                        <span class="date-num">11</span>
-                        <div class="date-divider"></div>
-                        <span class="date-num">2025</span>
+                    <style>
+                        .venue {
+                            font-family: 'MUZUViWSVAtQWxpchlaWEubRm';
+                            font-size: 28px;
+                            font-weight: bold;
+                            color: #A63736;
+                            margin: 0px;
+                        }
+                    </style>
+                    <h4 class="venue" style="margin: 0px;">Dự lễ VU QUY tại</h4>
+                    <div class="venue" style="margin: 0px;">Tư Gia</div>
+                    <div class="venue" style="margin: 0px;">vào lúc 09:00 - CHỦ NHẬT</div>
+                    <div class="date-display" style="color: #A63736; margin-bottom: 3px;">
+                        <span class="date-num" style="color: #A63736; margin-bottom: 3px;">30</span>
+                        <div class="date-divider" style="color: #A63736; margin-bottom: 3px;"></div>
+                        <span class="date-num" style="color: #A63736; margin-bottom: 3px;">11</span>
+                        <div class="date-divider" style="color: #A63736; margin-bottom: 3px;"></div>
+                        <span class="date-num" style="color: #A63736; margin-bottom: 3px;">2025</span>
                     </div>
 
                     <div class="couple-and">
                         <div
-                            style="display: flex; justify-content: space-between; align-items: center; gap: 15px; margin: 20px 0;">
+                            style="display: flex; justify-content: space-between; align-items: center; gap: 15px; margin: 0px 0;">
                             <h3 style="font-family: 'Playfair Display', serif; 
                                        font-size: 24px; 
                                        color: #dc143c; 
@@ -3139,7 +2963,7 @@
             .wedding-album {
                 max-width: 415px;
                 width: 100%;
-                margin: 0 auto;
+                margin: 0 auto 50px;
                 background-color: #7a1f1f;
                 color: white;
                 text-align: center;
@@ -3160,34 +2984,34 @@
                 }
             }
 
-            .album-header {
-                padding: 0.7rem 0 0.4rem;
-                animation: headerSlideDown 0.6s ease forwards;
-                animation-delay: 0.5s;
-                opacity: 0;
-            }
-
-            @keyframes headerSlideDown {
-                to {
-                    opacity: 1;
+            /* .album-header {
+                    padding: 0.7rem 0 0.4rem;
+                    animation: headerSlideDown 0.6s ease forwards;
+                    animation-delay: 0.5s;
+                    opacity: 0;
                 }
-            }
 
-            .album-header h2 {
-                font-size: 1rem;
-                font-weight: 600;
-                margin: 0;
-                line-height: 1.2;
-                letter-spacing: 1.5px;
-            }
+                @keyframes headerSlideDown {
+                    to {
+                        opacity: 1;
+                    }
+                }
 
-            .album-header span {
-                display: block;
-                font-style: italic;
-                font-size: 0.85rem;
-                font-weight: 400;
-                margin-top: 3px;
-            }
+                .album-header h2 {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin: 0;
+                    line-height: 1.2;
+                    letter-spacing: 1.5px;
+                }
+
+                .album-header span {
+                    display: block;
+                    font-style: italic;
+                    font-size: 0.85rem;
+                    font-weight: 400;
+                    margin-top: 3px;
+                } */
 
             /* Grid layout trái phải */
             .album-grid {
@@ -3271,70 +3095,11 @@
 
             /* Chiều cao cân bằng 2 cột: 6 ô trái = 5 ô phải */
             /* 6 × 95px = 570px | 5 × 114px = 570px */
-            .album-left>div {
-                height: 235px;
-            }
 
-            .album-right>div {
-                height: 200px;
-            }
 
-            /* Tùy chỉnh từng ảnh riêng biệt - Cột TRÁI */
-            .photo-left-1 {
-                height: 95px;
-            }
 
-            /* Ảnh 1 cột trái */
-            .photo-left-2 {
-                height: 95px;
-            }
 
-            /* Ảnh 2 cột trái */
-            .photo-left-3 {
-                height: 95px;
-            }
 
-            /* Ảnh 3 cột trái */
-            .photo-left-4 {
-                height: 95px;
-            }
-
-            /* Ảnh 4 cột trái */
-            .photo-left-5 {
-                height: 95px;
-            }
-
-            /* Ảnh 5 cột trái */
-            .photo-left-6 {
-                height: 95px;
-            }
-
-            /* Ảnh 6 cột trái */
-
-            /* Tùy chỉnh từng ảnh riêng biệt - Cột PHẢI */
-            .photo-right-1 {
-                height: 114px;
-            }
-
-            /* Ảnh 1 cột phải */
-            .photo-right-2 {
-                height: 114px;
-            }
-
-            /* Ảnh 2 cột phải */
-            .photo-right-3 {
-                height: 114px;
-            }
-
-            /* Ảnh 3 cột phải */
-            .photo-right-4 {
-                height: 114px;
-            }
-
-            /* Ảnh 4 cột phải */
-            .photo-right-5 {
-                height: 114px;
-            }
 
             /* Ảnh 5 cột phải */
 
@@ -3486,154 +3251,9 @@
                 box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
             }
 
-            /* Responsive cho điện thoại */
-            @media (max-width: 480px) {
-                .wedding-album {
-                    max-width: 100%;
-                    width: calc(100% - 20px);
-                    margin: 0 10px;
-                    border-radius: 8px;
-                }
-
-                /* NEW GRID LAYOUT - Mobile responsive */
-                .album-grid-new {
-                    flex-direction: column !important;
-                    gap: 2px !important;
-                }
-
-                .album-column {
-                    width: 100% !important;
-                    flex-direction: row !important;
-                    overflow-x: auto !important;
-                    overflow-y: hidden !important;
-                    gap: 5px !important;
-                    padding: 0 !important;
-                    -webkit-overflow-scrolling: touch;
-                }
-
-                .album-column .photo-box {
-                    height: 200px !important;
-                    min-width: 150px !important;
-                    flex-shrink: 0 !important;
-                }
-
-                /* Scrollbar styling */
-                .album-column::-webkit-scrollbar {
-                    height: 3px;
-                }
-
-                .album-column::-webkit-scrollbar-track {
-                    background: rgba(255, 255, 255, 0.1);
-                }
-
-                .album-column::-webkit-scrollbar-thumb {
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 3px;
-                }
-
-                /* OLD GRID LAYOUT - Keep for compatibility */
-                .album-grid {
-                    flex-direction: column !important;
-                    height: auto !important;
-                    padding: 0 !important;
-                }
-
-                .album-left,
-                .album-right {
-                    width: 100% !important;
-                    flex-direction: row !important;
-                    overflow-x: auto !important;
-                    overflow-y: hidden !important;
-                    gap: 5px !important;
-                    padding: 5px 0 !important;
-                    -webkit-overflow-scrolling: touch;
-                }
-
-                .album-left>div,
-                .album-right>div {
-                    height: 200px !important;
-                    min-width: 150px !important;
-                    flex-shrink: 0 !important;
-                }
-
-                .photo-left-1,
-                .photo-left-2,
-                .photo-left-3,
-                .photo-left-4,
-                .photo-left-5,
-                .photo-left-6,
-                .photo-left-7 {
-                    height: 200px !important;
-                    min-width: 150px !important;
-                }
-
-                .photo-right-1,
-                .photo-right-2,
-                .photo-right-3,
-                .photo-right-4,
-                .photo-right-5 {
-                    height: 200px !important;
-                    min-width: 150px !important;
-                }
-
-                .album-left::-webkit-scrollbar,
-                .album-right::-webkit-scrollbar {
-                    height: 3px;
-                }
-
-                .album-left::-webkit-scrollbar-track,
-                .album-right::-webkit-scrollbar-track {
-                    background: rgba(255, 255, 255, 0.1);
-                }
-
-                .album-left::-webkit-scrollbar-thumb,
-                .album-right::-webkit-scrollbar-thumb {
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 3px;
-                }
-
-                .album-header {
-                    padding: 0.6rem 0 0.3rem;
-                }
-
-                .album-header h2 {
-                    font-size: 0.85rem;
-                    letter-spacing: 1px;
-                }
-
-                .album-header span {
-                    font-size: 0.7rem;
-                }
-
-                .album-footer {
-                    padding: 0.5rem 0 0.6rem;
-                }
-
-                .see-album-btn {
-                    font-size: 0.6rem;
-                    padding: 0.35rem 0.9rem;
-                    letter-spacing: 1px;
-                    border-width: 1px;
-                }
-
-                .album-grid {
-                    gap: 1px;
-                }
-
-                .album-left,
-                .album-right {
-                    gap: 1px;
-                }
-            }
-
-            @media (min-width: 481px) and (max-width: 768px) {
-                .wedding-album {
-                    max-width: 380px;
-                }
-            }
 
             /* ===== COMPREHENSIVE RESPONSIVE FIXES FOR MOBILE ===== */
-            @media (max-width: 480px) {
+            @media (max-width: 400px) {
 
                 /* Fix container và overflow */
                 * {
@@ -3741,9 +3361,8 @@
 
                 /* Fix decorative header */
                 .decorative-header {
-                    /* height: auto !important;
-                    min-height: 100px !important;
-                    overflow: hidden !important; */
+                    /* keep a visible block on small screens */
+                    display: block !important;
                 }
 
                 .decorative-header h4 {
@@ -4015,93 +3634,18 @@
                     height: 45px !important;
                     bottom: 15px !important;
                     right: 15px !important;
+
                 }
+
+
+                /* css album */
+
             }
         </style>
-        <section class="wedding-album">
-            <div class="album-header">
-                <h2>OUR MOMENTS <span>of love</span></h2>
-            </div>
 
-            <!-- Grid Layout 3 cột giống hình mẫu -->
-            <div class="album-grid-new">
-                <!-- Cột 1 -->
-                <div class="album-column">
-                    <!-- Ảnh 1: Cao vừa -->
-                    <div class="photo-box" style="height: 180px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/34341376146256425053_sblzam.jpg"
-                            alt="Wedding 1">
-                    </div>
-                    <!-- Ảnh 2: Cao vừa -->
-                    <div class="photo-box" style="height: 180px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/9f0d094ed8eb55b50cfa14_ylmyvj.jpg"
-                            alt="Wedding 2">
-                    </div>
-                    <!-- Ảnh 3: Cao nhất -->
-                    <div class="photo-box" style="height: 240px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/ba57990f48aac5f49cbb12_bv469p.jpg"
-                            alt="Wedding 3">
-                    </div>
-                </div>
+        <!-- album -->
 
-                <!-- Cột 2 - Giữa (1 ảnh lớn) -->
-                <div class="album-column">
-                    <!-- Ảnh trung tâm: Rất cao -->
-                    <div class="photo-box" style="height: 604px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/dfcf2047f1e27cbc25f37_nwykbw.jpg"
-                            alt="Wedding Center">
-                    </div>
-                </div>
 
-                <!-- Cột 3 -->
-                <div class="album-column">
-                    <!-- Ảnh 4: Cao nhất -->
-                    <div class="photo-box" style="height: 240px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg"
-                            alt="Wedding 4">
-                    </div>
-                    <!-- Ảnh 5: Cao vừa -->
-                    <div class="photo-box" style="height: 180px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/b88057e786420b1c525310_uykxg2.jpg"
-                            alt="Wedding 5">
-                    </div>
-                    <!-- Ảnh 6: Cao vừa -->
-                    <div class="photo-box" style="height: 180px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/43313903013787524732_dymgb1.jpg"
-                            alt="Wedding 6">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hàng thứ 2: 3 cột chia đều -->
-            <div class="album-grid-new" style="margin-top: 2px;">
-                <!-- Ảnh 7 -->
-                <div class="album-column">
-                    <div class="photo-box" style="height: 200px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/c97a37e5e6406b1e32514_dmlvsy.jpg"
-                            alt="Wedding 7">
-                    </div>
-                </div>
-                <!-- Ảnh 8 -->
-                <div class="album-column">
-                    <div class="photo-box" style="height: 200px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7635445704245426169_xetyps.jpg"
-                            alt="Wedding 8">
-                    </div>
-                </div>
-                <!-- Ảnh 9 -->
-                <div class="album-column">
-                    <div class="photo-box" style="height: 200px;">
-                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/291524435533552197011_nl6sma.jpg"
-                            alt="Wedding 9">
-                    </div>
-                </div>
-            </div>
-
-            <div class="album-footer">
-                <button class="see-album-btn" onclick="openFullAlbum()">SEE ALBUM</button>
-            </div>
-        </section>
         <!-- Countdown -->
         <div class="section countdown-section">
             <h2 class="countdown-title">/ Thời gian /</h2>
@@ -4192,6 +3736,414 @@
             </div>
         </div>
 
+        <!-- Wedding Album -->
+        <style>
+            .wedding_album {
+                max-width: 40   0px;
+                width: 100%;
+                margin: 0 auto 50px;
+                background-color: #7a1f1f;
+                color: white;
+                font-family: "Playfair Display", serif;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                overflow: hidden;
+            }
+
+            /* Header */
+            .album_header {
+                padding: 1rem 1rem 0.8rem;
+                background-color: #7a1f1f;
+                text-align: left_child;
+            }
+
+            .album_header h2 {
+                font-size: 1rem;
+                font-weight: 700;
+                margin: 0;
+                line-height: 1.1;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            .album_header span {
+                font-style: italic;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-left: 3px;
+                text-transform: lowercase;
+                letter-spacing: 0.5px;
+            }
+
+            /* Two Column Layout */
+            .album_container {
+                display: flex;
+                gap: 2px;
+                padding: 0;
+                background-color: #7a1f1f;
+            }
+
+            .album_left_child {
+                width: 54%;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .album_right_child {
+                width: 46%;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            /* Photo Items */
+            .photo_item {
+                position: relative;
+                overflow: hidden;
+                background-color: #5a1515;
+                opacity: 0;
+            }
+
+            /* left_child column - 3 photos với tỷ lệ giống mẫu */
+            .album_left_child .photo_item:nth-child(1) {
+                height: 298px;
+                /* Ảnh đầu cao nhất */
+            }
+
+            .album_left_child .photo_item:nth-child(2) {
+                height: 288px;
+                /* Ảnh giữa */
+            }
+
+            .album_left_child .photo_item:nth-child(3) {
+                height: 300px;
+                /* Ảnh cuối cao nhất */
+            }
+
+            /* right_child column - 4 photos nhỏ hơn và đều nhau */
+            .album_right_child .photo_item {
+                height: 221px;
+                /* 4 ảnh đều nhau */
+            }
+
+            /* Animation from 4 directions */
+            .photo_item[data-direction="left_child"] {
+                animation: slideFromleft_child 0.8s ease forwards;
+            }
+
+            .photo_item[data-direction="right_child"] {
+                animation: slideFromright_child 0.8s ease forwards;
+            }
+
+            .photo_item[data-direction="top"] {
+                animation: slideFromTop 0.8s ease forwards;
+            }
+
+            .photo_item[data-direction="bottom_child"] {
+                animation: slideFrombottom_child 0.8s ease forwards;
+            }
+
+            /* Staggered delays */
+            .album_left_child .photo_item:nth-child(1) {
+                animation-delay: 0.2s;
+            }
+
+            .album_left_child .photo_item:nth-child(2) {
+                animation-delay: 0.5s;
+            }
+
+            .album_left_child .photo_item:nth-child(3) {
+                animation-delay: 0.8s;
+            }
+
+            .album_right_child .photo_item:nth-child(1) {
+                animation-delay: 0.3s;
+            }
+
+            .album_right_child .photo_item:nth-child(2) {
+                animation-delay: 0.6s;
+            }
+
+            .album_right_child .photo_item:nth-child(3) {
+                animation-delay: 0.9s;
+            }
+
+            .album_right_child .photo_item:nth-child(4) {
+                animation-delay: 1.2s;
+            }
+
+            /* Keyframe Animations */
+            @keyframes slideFromleft_child {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px) scale(0.9);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0) scale(1);
+                }
+            }
+
+            @keyframes slideFromright_child {
+                from {
+                    opacity: 0;
+                    transform: translateX(50px) scale(0.9);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0) scale(1);
+                }
+            }
+
+            @keyframes slideFromTop {
+                from {
+                    opacity: 0;
+                    transform: translateY(-50px) scale(0.9);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            @keyframes slideFrombottom_child {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px) scale(0.9);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            /* Image Styling */
+            .photo_item img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+                object-position: center;
+                transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+                cursor: pointer;
+            }
+
+            /* Hover Effects */
+            .photo_item:hover img {
+                transform: scale(1.1);
+            }
+
+            .photo_item:hover {
+                z-index: 10;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Footer */
+            .album_footer {
+                padding: 0.8rem 0;
+                background-color: #7a1f1f;
+                text-align: center;
+                position: relative;
+            }
+
+            .see_album_btn {
+                background: transparent;
+                border: 2px solid #fff;
+                color: #fff;
+                padding: 0.5rem 1.5rem;
+                font-size: 0.7rem;
+                letter-spacing: 2px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border-radius: 0;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-family: "Playfair Display", serif;
+            }
+
+            .see_album_btn:hover {
+                background-color: #fff;
+                color: #7a1f1f;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+            }
+
+            .click_music {
+                font-size: 0.6rem;
+                letter-spacing: 2px;
+                margin-top: 0.5rem;
+                opacity: 0.95;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .music_notes {
+                color: #ff6b6b;
+                font-size: 0.8rem;
+                animation: musicPulse 1.5s ease-in-out infinite;
+            }
+
+            @keyframes musicPulse {
+
+                0%,
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+
+                50% {
+                    transform: scale(1.3);
+                    opacity: 0.7;
+                }
+            }
+
+            /* ===== RESPONSIVE MOBILE ===== */
+            @media (max-width: 98%) {
+                .wedding_album {
+                    max-width: 100%;
+                    width: calc(100% - 20px);
+                    margin: 0 10px 30px;
+                }
+
+                .album_header {
+                    padding: 0.9rem 0.8rem 0.6rem;
+                }
+
+                .album_header h2 {
+                    font-size: 0.9rem;
+                }
+
+                .album_header span {
+                    font-size: 0.9rem;
+                }
+
+                .album_container {
+                    flex-direction: column;
+                }
+
+                .album_left_child,
+                .album_right_child {
+                    width: 100%;
+                }
+
+                /* Responsive heights on mobile */
+                .album_left_child .photo_item:nth-child(1) {
+                    height: 200px;
+                }
+
+                .album_left_child .photo_item:nth-child(2) {
+                    height: 180px;
+                }
+
+                .album_left_child .photo_item:nth-child(3) {
+                    height: 200px;
+                }
+
+                .album_right_child .photo_item {
+                    height: 150px;
+                }
+
+                .see_album_btn {
+                    font-size: 0.65rem;
+                    padding: 0.45rem 1.3rem;
+                }
+
+                .click_music {
+                    font-size: 0.55rem;
+                }
+
+                .music_notes {
+                    font-size: 0.75rem;
+                }
+            }
+
+            @media (min-width: 481px) and (max-width: 768px) {
+                .wedding_album {
+                    max-width: 420px;
+                }
+
+                .album_left_child .photo_item:nth-child(1) {
+                    height: 210px;
+                }
+
+                .album_left_child .photo_item:nth-child(2) {
+                    height: 190px;
+                }
+
+                .album_left_child .photo_item:nth-child(3) {
+                    height: 210px;
+                }
+
+                .album_right_child .photo_item {
+                    height: 152px;
+                }
+            }
+
+            /* Desktop larger screens */
+            @media (min-width: 769px) {
+                .wedding_album {
+                    max-width: 320px;
+                }
+            }
+        </style>
+        <section class="wedding_album">
+            <div class="album_header">
+                <h2>OUR<br>MOMENTS <span>of love</span></h2>
+            </div>
+
+            <div class="album_container">
+                <!-- left_child Column - 54% -->
+                <div class="album_left_child">
+                    <div class="photo_item" data-direction="left_child">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/34341376146256425053_sblzam.jpg"
+                            alt="Wedding 1">
+                    </div>
+                    <div class="photo_item" data-direction="bottom_child">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/9f0d094ed8eb55b50cfa14_ylmyvj.jpg"
+                            alt="Wedding 2">
+                    </div>
+                    <div class="photo_item" data-direction="left_child">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/ba57990f48aac5f49cbb12_bv469p.jpg"
+                            alt="Wedding 3">
+                    </div>
+                </div>
+
+                <!-- right_child Column - 46% -->
+                <div class="album_right_child">
+                    <div class="photo_item" data-direction="right_child">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/dfcf2047f1e27cbc25f37_nwykbw.jpg"
+                            alt="Wedding 4">
+                    </div>
+                    <div class="photo_item" data-direction="top">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/b88057e786420b1c525310_uykxg2.jpg"
+                            alt="Wedding 5">
+                    </div>
+                    <div class="photo_item" data-direction="right_child">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/43313903013787524732_dymgb1.jpg"
+                            alt="Wedding 6">
+                    </div>
+                    <div class="photo_item" data-direction="bottom_child">
+                        <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg"
+                            alt="Wedding 7">
+                    </div>
+                </div>
+            </div>
+
+            <div class="album_footer">
+                <button class="see_album_btn" onclick="openFullAlbum()">SEE ALBUM</button>
+                <div class="click_music">
+                    CLICK MUSIC
+                    <span class="music_notes">♪</span>
+                </div>
+            </div>
+        </section>
         <!-- Timeline -->
         <div class="section timeline-section">
             <h2 class="timeline-title">TIME LINE</h2>
@@ -4302,6 +4254,7 @@
         </div>
     </div>
 
+
     <!-- Thank You Modal -->
     <div id="thankYouModal" class="thank-you-modal">
         <div class="thank-you-content">
@@ -4357,9 +4310,9 @@
 
     <script>
         // Scroll to top on page load
-        // window.addEventListener('beforeunload', function () {
-        //     window.scrollTo(0, 0);
-        // });
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
 
         // Force scroll to top when page loads
         if (history.scrollRestoration) {
@@ -4731,6 +4684,66 @@
                 }
             });
         });
+        
+        /* Auto-convert on-load animations to scroll-triggered (opt-in) */
+        (function () {
+            function isAnimatable(el, cs) {
+                if (!cs) cs = getComputedStyle(el);
+                if (!cs || !cs.animationName || cs.animationName === 'none') return false;
+                // ignore zero-duration
+                if (parseFloat(cs.animationDuration || '0') === 0) return false;
+                // ignore infinite animations (decorative loops)
+                if (cs.animationIterationCount && cs.animationIterationCount === 'infinite') return false;
+                return true;
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const candidates = [];
+
+                // Find elements with a computed animation (non-infinite) and opt them into scroll-trigger
+                document.querySelectorAll('body *').forEach(el => {
+                    try {
+                        const cs = getComputedStyle(el);
+                        if (isAnimatable(el, cs)) {
+                            // store the computed shorthand animation to restore later
+                            const anim = cs.animation || [cs.animationName, cs.animationDuration, cs.animationTimingFunction, cs.animationDelay, cs.animationIterationCount, cs.animationDirection, cs.animationFillMode].join(' ');
+                            el.dataset._origAnimation = anim;
+                            el.classList.add('animate-on-scroll');
+                            // prevent it running on load
+                            el.style.animation = 'none';
+                            // ensure hidden initial state for many animations
+                            el.style.opacity = '0';
+                            candidates.push(el);
+                        }
+                    } catch (e) {
+                        // ignore computed-style errors for SVG or special elements
+                    }
+                });
+
+                if (candidates.length === 0) return;
+
+                // inject minimal helper CSS if not present
+                const style = document.createElement('style');
+                style.textContent = '.animate-on-scroll{opacity:0;transform:translateY(12px);will-change:opacity,transform}.animate-on-scroll.in-view{opacity:1;transform:none}';
+                document.head.appendChild(style);
+
+                const io = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const orig = el.dataset._origAnimation;
+                            const delay = el.getAttribute('data-anim-delay');
+                            if (delay) el.style.animationDelay = delay;
+                            if (orig) el.style.animation = orig;
+                            el.classList.add('in-view');
+                            obs.unobserve(el); // one-shot
+                        }
+                    });
+                }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+
+                candidates.forEach(el => io.observe(el));
+            });
+        })();
     </script>
 </body>
 
