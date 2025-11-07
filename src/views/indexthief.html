@@ -85,7 +85,7 @@
         }
 
         /* Mobile responsive */
-        @media (max-width: 400px) {
+        @media (max-width: 390px) {
             .container {
                 max-width: 100%;
                 padding: 3px;
@@ -270,7 +270,7 @@
             position: relative;
             text-align: center;
             margin: 0 auto;
-            max-width: 400px;
+            max-width: 390px;
             opacity: 0;
             animation: slideInFromTop 1.2s ease forwards;
             animation-delay: 1s;
@@ -1069,8 +1069,8 @@
             transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            font-size: 30px;
-            padding: 15px 20px;
+            font-size: 24px;
+            padding: 12px 16px;
             cursor: pointer;
             border-radius: 50%;
             transition: all 0.3s ease;
@@ -1099,10 +1099,10 @@
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.6);
             color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-family: 'Playfair Display', serif;
-            font-size: 16px;
+            font-size: 14px;
             backdrop-filter: blur(10px);
         }
 
@@ -1159,7 +1159,7 @@
         }
 
         /* Mobile responsive */
-        @media (max-width: 400px) {
+        @media (max-width: 390px) {
             .gallery-header h2 {
                 font-size: 22px;
             }
@@ -1173,8 +1173,8 @@
             }
 
             .gallery-nav {
-                font-size: 24px;
-                padding: 10px 15px;
+                font-size: 20px;
+                padding: 8px 12px;
             }
 
             .gallery-nav.prev {
@@ -1191,8 +1191,8 @@
             }
 
             .gallery-counter {
-                font-size: 14px;
-                padding: 8px 15px;
+                font-size: 12px;
+                padding: 6px 12px;
             }
         }
 
@@ -1240,7 +1240,7 @@
         }
 
         /* Responsive cho mobile */
-        @media (max-width: 400px) {
+        @media (max-width: 390px) {
             .photo-item {
                 padding: 20px 15px;
             }
@@ -1347,11 +1347,178 @@
             color: #A63736;
             padding: 8px 4px;
             border-radius: 4px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUpCalendar 0.6s ease-out forwards;
+            will-change: transform, opacity;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover effects for calendar days */
+        .calendar-day:hover {
+            background: rgba(194, 11, 11, 0.1);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 8px rgba(166, 55, 54, 0.2);
+            color: #c20b0b;
+            font-weight: 600;
+        }
+
+        /* Active bounce animation after load */
+        .calendar-day.loaded {
+            animation: gentlePulse 3s ease-in-out infinite;
+        }
+
+        /* Random floating animation for some days */
+        .calendar-day:nth-child(10),
+        .calendar-day:nth-child(18),
+        .calendar-day:nth-child(25),
+        .calendar-day:nth-child(33) {
+            animation: slideUpCalendar 0.6s ease-out forwards, 
+                       floatGentle 4s ease-in-out infinite 2s;
+        }
+
+        /* Staggered animation delays for calendar days */
+        .calendar-day:nth-child(8) { animation-delay: 0.1s; }
+        .calendar-day:nth-child(9) { animation-delay: 0.15s; }
+        .calendar-day:nth-child(10) { animation-delay: 0.2s; }
+        .calendar-day:nth-child(11) { animation-delay: 0.25s; }
+        .calendar-day:nth-child(12) { animation-delay: 0.3s; }
+        .calendar-day:nth-child(13) { animation-delay: 0.35s; }
+        .calendar-day:nth-child(14) { animation-delay: 0.4s; }
+        
+        .calendar-day:nth-child(15) { animation-delay: 0.45s; }
+        .calendar-day:nth-child(16) { animation-delay: 0.5s; }
+        .calendar-day:nth-child(17) { animation-delay: 0.55s; }
+        .calendar-day:nth-child(18) { animation-delay: 0.6s; }
+        .calendar-day:nth-child(19) { animation-delay: 0.65s; }
+        .calendar-day:nth-child(20) { animation-delay: 0.7s; }
+        .calendar-day:nth-child(21) { animation-delay: 0.75s; }
+        
+        .calendar-day:nth-child(22) { animation-delay: 0.8s; }
+        .calendar-day:nth-child(23) { animation-delay: 0.85s; }
+        .calendar-day:nth-child(24) { animation-delay: 0.9s; }
+        .calendar-day:nth-child(25) { animation-delay: 0.95s; }
+        .calendar-day:nth-child(26) { animation-delay: 1.0s; }
+        .calendar-day:nth-child(27) { animation-delay: 1.05s; }
+        .calendar-day:nth-child(28) { animation-delay: 1.1s; }
+        
+        .calendar-day:nth-child(29) { animation-delay: 1.15s; }
+        .calendar-day:nth-child(30) { animation-delay: 1.2s; }
+        .calendar-day:nth-child(31) { animation-delay: 1.25s; }
+        .calendar-day:nth-child(32) { animation-delay: 1.3s; }
+        .calendar-day:nth-child(33) { animation-delay: 1.35s; }
+        .calendar-day:nth-child(34) { animation-delay: 1.4s; }
+        .calendar-day:nth-child(35) { animation-delay: 1.45s; }
+        
+        .calendar-day:nth-child(36) { animation-delay: 1.5s; }
+        .calendar-day:nth-child(37) { 
+            animation-delay: 1.55s; 
+            animation-name: slideUpCalendarHighlight;
+            animation-duration: 0.8s;
         }
 
         .calendar-day.highlight {
-            background: white;
+            background: linear-gradient(135deg, #fff 0%, #ffe6e6 100%);
             font-weight: bold;
+            font-size: 16px;
+            color: #c20b0b;
+            box-shadow: 0 6px 20px rgba(194, 11, 11, 0.4);
+            transform: scale(1.1);
+            border: 2px solid #c20b0b;
+            animation: slideUpCalendarHighlight 0.8s ease-out forwards,
+                       heartBeat 2s ease-in-out infinite 3s;
+            position: relative;
+        }
+
+        /* Special glowing effect for highlight */
+        .calendar-day.highlight::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #c20b0b, #ff4757, #c20b0b);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            animation: glowPulse 3s ease-in-out infinite 2s;
+        }
+
+        .calendar-day.highlight:hover {
+            transform: scale(1.15) rotate(3deg);
+            box-shadow: 0 8px 25px rgba(194, 11, 11, 0.6);
+        }
+
+        /* Animation keyframes */
+        @keyframes slideUpCalendar {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUpCalendarHighlight {
+            0% {
+                opacity: 0;
+                transform: translateY(25px) scale(0.8);
+            }
+            70% {
+                transform: translateY(-5px) scale(1.15);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1.1);
+            }
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes floatGentle {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1.1);
+            }
+            25% {
+                transform: scale(1.15);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            75% {
+                transform: scale(1.13);
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
         }
 
         /* Map */
@@ -1427,6 +1594,12 @@
             width: 3px;
             background: #A63736;
             transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .timeline-line.animate-line {
+            opacity: 1;
         }
 
         .timeline-item {
@@ -1434,39 +1607,64 @@
             align-items: center;
             margin: 30px 0;
             position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .timeline-item.animate-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delays for sequential animation */
+        .timeline-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .timeline-item:nth-child(3) {
+            transition-delay: 0.4s;
+        }
+
+        .timeline-item:nth-child(4) {
+            transition-delay: 0.6s;
+        }
+
+        .timeline-item:nth-child(5) {
+            transition-delay: 0.8s;
         }
 
         /* Item 1 (09:00 Lễ Cưới) - Bên trái */
-        .timeline-item:nth-child(2) {
+        .timeline-item:nth-child(2).animate-item {
             justify-content: flex-start;
             padding-right: 25%;
         }
 
         /* Item 2 (10:30 Đón khách) - Bên phải, qua thanh */
-        .timeline-item:nth-child(3) {
+        .timeline-item:nth-child(3).animate-item {
             justify-content: flex-end;
             flex-direction: row-reverse;
             padding-left: 48%;
         }
 
-        .timeline-item:nth-child(3) .timeline-content {
+        .timeline-item:nth-child(3).animate-item .timeline-content {
             margin-left: 20px;
         }
 
         /* Item 3 (11:00 Khai Tiệc) - Bên trái */
-        .timeline-item:nth-child(4) {
+        .timeline-item:nth-child(4).animate-item {
             justify-content: flex-start;
             padding-right: 25%;
         }
 
         /* Item 4 (11:30 Tiệc Cưới) - Bên phải, qua thanh */
-        .timeline-item:nth-child(5) {
+        .timeline-item:nth-child(5).animate-item {
             justify-content: flex-end;
             flex-direction: row-reverse;
             padding-left: 48%;
         }
 
-        .timeline-item:nth-child(5) .timeline-content {
+        .timeline-item:nth-child(5).animate-item .timeline-content {
             margin-left: 20px;
         }
 
@@ -1498,76 +1696,183 @@
 
         /* RSVP Form */
         .rsvp-section {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(5px);
-            border-radius: 16px;
-            /* padding: 30px 20px; */
-            /* margin: 60px 0; */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 240, 223, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 60px 0;
+            box-shadow: 0 20px 40px rgba(166, 55, 54, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rsvp-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23c20b0b" opacity="0.1"/></svg>') repeat;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .rsvp-section > * {
+            position: relative;
+            z-index: 1;
         }
 
         .rsvp-title {
-            font-family: 'Rokkitt', serif;
-            font-size: 25px;
-            font-weight: bold;
-            color: #3F3F3F;
-            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #c20b0b;
+            letter-spacing: 2px;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         .rsvp-subtitle {
-            font-family: 'Exo', sans-serif;
-            font-size: 18px;
-            color: #3F3F3F;
-            letter-spacing: 3px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 22px;
+            color: #A63736;
+            letter-spacing: 4px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            font-style: italic;
         }
 
         .form-row {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-row label {
             display: block;
-            font-size: 14px;
-            color: #3F3F3F;
-            margin-bottom: 8px;
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+            color: #A63736;
+            margin-bottom: 10px;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .form-row input,
         .form-row select,
         .form-row textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'Open Sans', sans-serif;
+            padding: 16px 20px;
+            border: 2px solid rgba(166, 55, 54, 0.2);
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: 'Crimson Text', serif;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            outline: none;
+            border-color: #c20b0b;
+            box-shadow: 0 0 0 3px rgba(194, 11, 11, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-row input::placeholder,
+        .form-row textarea::placeholder {
+            color: rgba(166, 55, 54, 0.6);
+            font-style: italic;
         }
 
         .form-row textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 100px;
+            line-height: 1.6;
+        }
+
+        .form-row select {
+            cursor: pointer;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c20b0b"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+            appearance: none;
         }
 
         .form-row button {
             width: 100%;
-            padding: 14px;
-            background: #A63736;
+            padding: 18px 20px;
+            background: linear-gradient(135deg, #c20b0b 0%, #A63736 100%);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(194, 11, 11, 0.3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-row button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
         }
 
         .form-row button:hover {
-            background: #8B2E2D;
+            background: linear-gradient(135deg, #d40c0c 0%, #B63D3D 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(194, 11, 11, 0.4);
+        }
+
+        .form-row button:hover::before {
+            left: 100%;
+        }
+
+        .form-row button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 390px) {
+            .rsvp-section {
+                padding: 30px 20px;
+                margin: 40px 0;
+            }
+            
+            .rsvp-title {
+                font-size: 28px;
+            }
+            
+            .rsvp-subtitle {
+                font-size: 20px;
+            }
+            
+            .form-row input,
+            .form-row select,
+            .form-row textarea {
+                padding: 14px 16px;
+                font-size: 15px;
+            }
+            
+            .form-row button {
+                padding: 16px 18px;
+                font-size: 16px;
+            }
         }
 
         /* Final Message */
@@ -1722,7 +2027,7 @@
             }
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 390px) {
             .thank-you-content {
                 padding: 30px 20px;
             }
@@ -2002,7 +2307,7 @@
         }
 
         /* Responsive */
-        @media (max-width: 400px) {
+        @media (max-width: 390px) {
             .couple-names {
                 font-size: 18px;
             }
@@ -2030,8 +2335,8 @@
 
             .timeline-item,
             .timeline-item:nth-child(even) {
-                flex-direction: column !important;
-                justify-content: center !important;
+                flex-direction: column ;
+                justify-content: center !;
             }
 
             .timeline-icon {
@@ -2131,7 +2436,7 @@
         }
 
         /* Responsive cho mobile */
-        @media (max-width: 400px) {
+        @media (max-width: 390px) {
 
             .photo-item,
             .photo-item.reverse {
@@ -2378,7 +2683,7 @@
             }
 
             /* Responsive */
-            @media (max-width: 400px) {
+            @media (max-width: 390px) {
                 .photo-item {
                     padding: 25px 15px;
                 }
@@ -2551,7 +2856,7 @@
             }
 
             /* Responsive */
-            @media (max-width: 400px) {
+            @media (max-width: 390px) {
                 .wedding-details-box {
                     padding: 25px 15px;
                 }
@@ -2659,7 +2964,7 @@
                 font-size: 1.2rem;
                 font-weight: 700;
                 margin: 0;
-                color: ##d85252;
+                color: #d85252;
                 display: block;
             }
 
@@ -2668,7 +2973,7 @@
                 font-size: 17px;
                 font-weight: 700;
                 margin: 0;
-                color: #e85656; 
+                color: #e85656;
             }
 
             /* couple row: bride - heart - groom */
@@ -2682,11 +2987,11 @@
                 margin-top: 6px;
             }
 
-            .header-section .couple-row h1 {
+            j .header-section .couple-row h1 {
                 font-size: 1.25rem;
                 margin: 0;
                 font-weight: 600;
-                color: # c20b0b;
+                /* color: # c20b0b; */
                 /* use inherited color where set */
             }
 
@@ -2802,8 +3107,7 @@
     display: block !important
     ">
                 <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
-                    alt="Overlay Decoration" style="position: absolute;
-                    position: absolute;
+                    alt="Overlay Decoration" class="decorative-flower" style="position: absolute;
     top: 56%;
     left: 6%;
     transform: translate(-57%, -50%) rotate(15deg);
@@ -2903,7 +3207,7 @@
                 <!-- Ảnh mới overlay -->
                 <img src="https://res.cloudinary.com/devdnfoyh/image/upload/v1761645381/capdoi_uz3ou9.png"
                     alt="Background Overlay" style="position: absolute; top: 36%; left: 50%; transform: translate(-50%, -50%); 
-                            max-width: 400px; width: 100%; height: auto; opacity: 0.05; z-index: 0;">
+                            max-width: 390px; width: 100%; height: auto; opacity: 0.05; z-index: 0;">
                 <!-- Thêm ảnh thứ 2 bên cạnh -->
                 <img src="https://cdn.cinelove.me/uploads/0f767b27-a71b-47a7-9e12-f4992f0c79f7/6e8e5636-7a29-4c78-9d5e-bdcb146916aa.png"
                     alt="Second Background Overlay" style="position: absolute; top: 20%; right: 10%; transform: translate(50%, -50%); 
@@ -2918,12 +3222,25 @@
                             margin: 0px;
                         }
                     </style>
-                    <h4 class="venue" style="margin: 0px;">Dự lễ VU QUY tại</h4>
-                    <div class="venue" style="margin: 0px;">Tư Gia</div>
-                    <div class="venue" style="margin: 0px;">vào lúc 09:00 - CHỦ NHẬT</div>
+                    <div class="thongtin" style="display: flex;">
+                        <div class="nhagai" style="width: 45%;">
+                            <p><b class="venue">Nhà gái:</b></p>
+                            <p><b>Ông</b>: Sơn Đên</p>
+                            <p><b>Bà:</b> Lâm Thị <br> Bích Vân</p>
+                        </div>
+                        <div class="nhatrai" style="width: 45%;">
+                            <p><b class="venue">Nhà trai:</b></p>
+                            <p><b>Ông</b>: Pan Jinyi</p>
+                            <p><b>Bà:</b> Guo Meifeng</p>
+                        </div>
+                    </div> 
+                    <br><h4 class="venue" style="margin: 0px;">Thân mời bạn đến dự <br> lễ VU QUY </h4>
+                    <div class="venue" style="margin: 0px;">tại Tư Gia</div>
+                    <div class="venue" style="margin: 0px;">vào lúc 11:00 - CHỦ NHẬT</div>
+                    
                     <div class="date-display" style="color: rgb(194, 14, 14); margin-bottom: 3px;">
                         <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">30</span>
-                        <div class="date-divider" style="color: #rgb(194, 14, 14); margin-bottom: 3px;"></div>
+                        <div class="date-divider" style="color: rgb(194, 14, 14); margin-bottom: 3px;"></div>
                         <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">11</span>
                         <div class="date-divider" style="color: rgb(194, 14, 14); margin-bottom: 3px;"></div>
                         <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">2025</span>
@@ -3000,10 +3317,9 @@
                                                        padding: 15px 10px;
                                                        border-radius: 8px;
                                                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        Trân trọng mời bạn và gia đình đến dự lễ cưới<br>
+                        Trân trọng mời bạn và gia đình đến dự lễ cưới
                         của chúng mình.<br><br>
-                        <em style="color: ; font-size: 14px;">Sự hiện diện của Bạn là niềm vinh hạnh của<br>
-                        Gia đình Tôi</em> ✨
+                        
 
                     </div>
                 </div> <!-- Đóng div wrapper -->
@@ -3306,7 +3622,7 @@
 
 
             /* ===== COMPREHENSIVE RESPONSIVE FIXES FOR MOBILE ===== */
-            @media (max-width: 400px) {
+            @media (max-width: 380px) {
 
                 /* Fix container và overflow */
                 * {
@@ -3629,8 +3945,8 @@
                 }
 
                 .gallery-nav {
-                    font-size: 20px !important;
-                    padding: 8px 12px !important;
+                    font-size: 18px !important;
+                    padding: 6px 10px !important;
                 }
 
                 .gallery-nav.prev {
@@ -3647,8 +3963,8 @@
                 }
 
                 .gallery-counter {
-                    font-size: 12px !important;
-                    padding: 6px 12px !important;
+                    font-size: 11px !important;
+                    padding: 5px 10px !important;
                     bottom: 10px !important;
                 }
 
@@ -3775,8 +4091,8 @@
 
         <!-- Map -->
         <div class="section map-section">
-            <h2 class="map-title">/ Địa Chỉ /</h2>
-
+            <h2 class="map-title" style="color: #7a1f1f;">/ Địa Chỉ /</h2>
+            <p style="animation-timing-function: calc();">Nhấn để <a  href="https://www.google.com/maps/place/10%C2%B036'55.0%22N+37%C2%B042'55.0%22E/@10.615278,37.715278,15z/data=!4m2!3m1!1s0x0:0x0" target="_blank">Xem bản đồ </a></p>
             <div class="map-container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3477.59659337964!2d105.92457197502662!3d9.64485449044316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzgnNDEuNSJOIDEwNcKwNTUnMzcuNyJF!5e1!3m2!1svi!2s!4v1762442252118!5m2!1svi!2s"
@@ -4202,8 +4518,8 @@
         </section>
         <!-- Timeline -->
         <div class="section timeline-section">
-            <h2 class="timeline-title">TIME LINE</h2>
-            <p class="timeline-subtitle">Wedding process</p>
+            <h2 class="timeline-title venue" >TIME LINE</h2>
+            <p class="timeline-subtitle venue">Wedding process</p>
 
             <div class="timeline-items">
                 <div class="timeline-line"></div>
@@ -4258,17 +4574,17 @@
 
             <form id="rsvpForm">
                 <div class="form-row">
-                    <label for="senderName">👤 Tên của bạn *</label>
+                    <label for="senderName">✨ Tên của bạn *</label>
                     <input type="text" id="senderName" name="senderName" required placeholder="Nhập tên của bạn...">
                 </div>
 
                 <div class="form-row">
-                    <label for="relationship">🤝 Mối quan hệ</label>
+                    <label for="relationship">🌸 Mối quan hệ</label>
                     <input type="text" id="relationship" name="relationship" placeholder="Bạn của cô dâu...">
                 </div>
 
                 <div class="form-row">
-                    <label for="attendance">🎉 Bạn có thể tham dự? *</label>
+                    <label for="attendance">💐 Bạn có thể tham dự? *</label>
                     <select id="attendance" name="attendance" required>
                         <option value="">-- Chọn --</option>
                         <option value="yes">✅ Có</option>
@@ -4278,7 +4594,7 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="numberOfGuests">👨‍👩‍👧‍👦 Số người</label>
+                    <label for="numberOfGuests">� Số người</label>
                     <select id="numberOfGuests" name="numberOfGuests">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -4290,13 +4606,13 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="message">💝 Lời chúc</label>
+                    <label for="message">� Lời chúc</label>
                     <textarea id="message" name="message" rows="3"
                         placeholder="Gửi lời chúc tới đôi uyên ương..."></textarea>
                 </div>
 
                 <div class="form-row">
-                    <button type="submit">🚀 Gửi lời chúc</button>
+                    <button type="submit">� Gửi lời chúc</button>
                 </div>
             </form>
         </div>
@@ -4319,7 +4635,7 @@
             <button class="close-btn" onclick="closeThankYouModal()">✕</button>
 
             <img class="thank-you-image"
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop" alt="Thank You">
+                src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg" alt="Thank You">
 
             <h2>Cảm Ơn Bạn!</h2>
 
@@ -4338,7 +4654,7 @@
     <!-- Gallery Modal - Album đầy đủ -->
     <div id="galleryModal" class="gallery-modal">
         <div class="gallery-header">
-            <h2>💕 Our Wedding Album 💕</h2>
+            <h2 style="color: #b30000;"> Our Wedding Album </h2>
         </div>
         <span class="gallery-close" onclick="closeGallery()">&times;</span>
 
@@ -4584,14 +4900,14 @@
         // Gallery Album Functions
         const albumImages = [
             'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/c97a37e5e6406b1e32514_dmlvsy.jpg',
-            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/34341376146256425053_sblzam.jpg',
-            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/291524435533552197011_nl6sma.jpg',
-            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/9f0d094ed8eb55b50cfa14_ylmyvj.jpg',
-            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg',
             'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/ba57990f48aac5f49cbb12_bv469p.jpg',
-            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/b88057e786420b1c525310_uykxg2.jpg',
+            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg',
             'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/43313903013787524732_dymgb1.jpg',
-            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7635445704245426169_xetyps.jpg'
+            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/9f0d094ed8eb55b50cfa14_ylmyvj.jpg',
+            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/7112222159484253846_traixt.jpg',
+            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071610/291524435533552197011_nl6sma.jpg',
+            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/671d785aa9ff24a17dee13_it271q.jpg',
+            'https://res.cloudinary.com/devdnfoyh/image/upload/v1762071609/51611802254825238_igqncx.jpg'
         ];
 
         let currentImageIndex = 0;
@@ -4867,6 +5183,43 @@
 
                 candidates.forEach(el => io.observe(el));
             });
+        })();
+
+        // Timeline Sequential Animation
+        (function() {
+            const timelineSection = document.querySelector('.timeline-section');
+            if (!timelineSection) return;
+
+            const timelineLine = document.querySelector('.timeline-line');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate the timeline line first
+                        setTimeout(() => {
+                            if (timelineLine) {
+                                timelineLine.classList.add('animate-line');
+                            }
+                        }, 200);
+
+                        // Animate timeline items sequentially
+                        timelineItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('animate-item');
+                            }, 400 + (index * 200)); // Start after line animation, then 200ms apart
+                        });
+
+                        timelineObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -20% 0px',
+                threshold: 0.3
+            });
+
+            timelineObserver.observe(timelineSection);
         })();
     </script>
 </body>
