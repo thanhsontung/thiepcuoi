@@ -1376,46 +1376,129 @@
         .calendar-day:nth-child(18),
         .calendar-day:nth-child(25),
         .calendar-day:nth-child(33) {
-            animation: slideUpCalendar 0.6s ease-out forwards, 
-                       floatGentle 4s ease-in-out infinite 2s;
+            animation: slideUpCalendar 0.6s ease-out forwards,
+                floatGentle 4s ease-in-out infinite 2s;
         }
 
         /* Staggered animation delays for calendar days */
-        .calendar-day:nth-child(8) { animation-delay: 0.1s; }
-        .calendar-day:nth-child(9) { animation-delay: 0.15s; }
-        .calendar-day:nth-child(10) { animation-delay: 0.2s; }
-        .calendar-day:nth-child(11) { animation-delay: 0.25s; }
-        .calendar-day:nth-child(12) { animation-delay: 0.3s; }
-        .calendar-day:nth-child(13) { animation-delay: 0.35s; }
-        .calendar-day:nth-child(14) { animation-delay: 0.4s; }
-        
-        .calendar-day:nth-child(15) { animation-delay: 0.45s; }
-        .calendar-day:nth-child(16) { animation-delay: 0.5s; }
-        .calendar-day:nth-child(17) { animation-delay: 0.55s; }
-        .calendar-day:nth-child(18) { animation-delay: 0.6s; }
-        .calendar-day:nth-child(19) { animation-delay: 0.65s; }
-        .calendar-day:nth-child(20) { animation-delay: 0.7s; }
-        .calendar-day:nth-child(21) { animation-delay: 0.75s; }
-        
-        .calendar-day:nth-child(22) { animation-delay: 0.8s; }
-        .calendar-day:nth-child(23) { animation-delay: 0.85s; }
-        .calendar-day:nth-child(24) { animation-delay: 0.9s; }
-        .calendar-day:nth-child(25) { animation-delay: 0.95s; }
-        .calendar-day:nth-child(26) { animation-delay: 1.0s; }
-        .calendar-day:nth-child(27) { animation-delay: 1.05s; }
-        .calendar-day:nth-child(28) { animation-delay: 1.1s; }
-        
-        .calendar-day:nth-child(29) { animation-delay: 1.15s; }
-        .calendar-day:nth-child(30) { animation-delay: 1.2s; }
-        .calendar-day:nth-child(31) { animation-delay: 1.25s; }
-        .calendar-day:nth-child(32) { animation-delay: 1.3s; }
-        .calendar-day:nth-child(33) { animation-delay: 1.35s; }
-        .calendar-day:nth-child(34) { animation-delay: 1.4s; }
-        .calendar-day:nth-child(35) { animation-delay: 1.45s; }
-        
-        .calendar-day:nth-child(36) { animation-delay: 1.5s; }
-        .calendar-day:nth-child(37) { 
-            animation-delay: 1.55s; 
+        .calendar-day:nth-child(8) {
+            animation-delay: 0.1s;
+        }
+
+        .calendar-day:nth-child(9) {
+            animation-delay: 0.15s;
+        }
+
+        .calendar-day:nth-child(10) {
+            animation-delay: 0.2s;
+        }
+
+        .calendar-day:nth-child(11) {
+            animation-delay: 0.25s;
+        }
+
+        .calendar-day:nth-child(12) {
+            animation-delay: 0.3s;
+        }
+
+        .calendar-day:nth-child(13) {
+            animation-delay: 0.35s;
+        }
+
+        .calendar-day:nth-child(14) {
+            animation-delay: 0.4s;
+        }
+
+        .calendar-day:nth-child(15) {
+            animation-delay: 0.45s;
+        }
+
+        .calendar-day:nth-child(16) {
+            animation-delay: 0.5s;
+        }
+
+        .calendar-day:nth-child(17) {
+            animation-delay: 0.55s;
+        }
+
+        .calendar-day:nth-child(18) {
+            animation-delay: 0.6s;
+        }
+
+        .calendar-day:nth-child(19) {
+            animation-delay: 0.65s;
+        }
+
+        .calendar-day:nth-child(20) {
+            animation-delay: 0.7s;
+        }
+
+        .calendar-day:nth-child(21) {
+            animation-delay: 0.75s;
+        }
+
+        .calendar-day:nth-child(22) {
+            animation-delay: 0.8s;
+        }
+
+        .calendar-day:nth-child(23) {
+            animation-delay: 0.85s;
+        }
+
+        .calendar-day:nth-child(24) {
+            animation-delay: 0.9s;
+        }
+
+        .calendar-day:nth-child(25) {
+            animation-delay: 0.95s;
+        }
+
+        .calendar-day:nth-child(26) {
+            animation-delay: 1.0s;
+        }
+
+        .calendar-day:nth-child(27) {
+            animation-delay: 1.05s;
+        }
+
+        .calendar-day:nth-child(28) {
+            animation-delay: 1.1s;
+        }
+
+        .calendar-day:nth-child(29) {
+            animation-delay: 1.15s;
+        }
+
+        .calendar-day:nth-child(30) {
+            animation-delay: 1.2s;
+        }
+
+        .calendar-day:nth-child(31) {
+            animation-delay: 1.25s;
+        }
+
+        .calendar-day:nth-child(32) {
+            animation-delay: 1.3s;
+        }
+
+        .calendar-day:nth-child(33) {
+            animation-delay: 1.35s;
+        }
+
+        .calendar-day:nth-child(34) {
+            animation-delay: 1.4s;
+        }
+
+        .calendar-day:nth-child(35) {
+            animation-delay: 1.45s;
+        }
+
+        .calendar-day:nth-child(36) {
+            animation-delay: 1.5s;
+        }
+
+        .calendar-day:nth-child(37) {
+            animation-delay: 1.55s;
             animation-name: slideUpCalendarHighlight;
             animation-duration: 0.8s;
         }
@@ -1429,7 +1512,7 @@
             transform: scale(1.1);
             border: 2px solid #c20b0b;
             animation: slideUpCalendarHighlight 0.8s ease-out forwards,
-                       heartBeat 2s ease-in-out infinite 3s;
+                heartBeat 2s ease-in-out infinite 3s;
             position: relative;
         }
 
@@ -1459,6 +1542,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1470,9 +1554,11 @@
                 opacity: 0;
                 transform: translateY(25px) scale(0.8);
             }
+
             70% {
                 transform: translateY(-5px) scale(1.15);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1.1);
@@ -1480,42 +1566,56 @@
         }
 
         @keyframes gentlePulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.02);
             }
         }
 
         @keyframes floatGentle {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-3px);
             }
         }
 
         @keyframes heartBeat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1.1);
             }
+
             25% {
                 transform: scale(1.15);
             }
+
             50% {
                 transform: scale(1.1);
             }
+
             75% {
                 transform: scale(1.13);
             }
         }
 
         @keyframes glowPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0;
             }
+
             50% {
                 opacity: 0.3;
             }
@@ -1719,7 +1819,7 @@
             z-index: 0;
         }
 
-        .rsvp-section > * {
+        .rsvp-section>* {
             position: relative;
             z-index: 1;
         }
@@ -1732,7 +1832,7 @@
             letter-spacing: 2px;
             text-align: center;
             margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .rsvp-subtitle {
@@ -1829,7 +1929,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
 
@@ -1853,22 +1953,22 @@
                 padding: 30px 20px;
                 margin: 40px 0;
             }
-            
+
             .rsvp-title {
                 font-size: 28px;
             }
-            
+
             .rsvp-subtitle {
                 font-size: 20px;
             }
-            
+
             .form-row input,
             .form-row select,
             .form-row textarea {
                 padding: 14px 16px;
                 font-size: 15px;
             }
-            
+
             .form-row button {
                 padding: 16px 18px;
                 font-size: 16px;
@@ -2335,7 +2435,7 @@
 
             .timeline-item,
             .timeline-item:nth-child(even) {
-                flex-direction: column ;
+                flex-direction: column;
                 justify-content: center !;
             }
 
@@ -3233,11 +3333,12 @@
                             <p><b>Ông</b>: Pan Jinyi</p>
                             <p><b>Bà:</b> Guo Meifeng</p>
                         </div>
-                    </div> 
-                    <br><h4 class="venue" style="margin: 0px;">Thân mời bạn đến dự <br> lễ VU QUY </h4>
+                    </div>
+                    <br>
+                    <h4 class="venue" style="margin: 0px;">Thân mời bạn đến dự <br> lễ VU QUY </h4>
                     <div class="venue" style="margin: 0px;">tại Tư Gia</div>
                     <div class="venue" style="margin: 0px;">vào lúc 11:00 - CHỦ NHẬT</div>
-                    
+
                     <div class="date-display" style="color: rgb(194, 14, 14); margin-bottom: 3px;">
                         <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">30</span>
                         <div class="date-divider" style="color: rgb(194, 14, 14); margin-bottom: 3px;"></div>
@@ -3319,7 +3420,7 @@
                                                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                         Trân trọng mời bạn và gia đình đến dự lễ cưới
                         của chúng mình.<br><br>
-                        
+
 
                     </div>
                 </div> <!-- Đóng div wrapper -->
@@ -4052,6 +4153,12 @@
                 <div class="calendar-header">T7</div>
                 <div class="calendar-header">CN</div>
 
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+
                 <div class="calendar-day">01</div>
                 <div class="calendar-day">02</div>
                 <div class="calendar-day">03</div>
@@ -4092,7 +4199,9 @@
         <!-- Map -->
         <div class="section map-section">
             <h2 class="map-title" style="color: #7a1f1f;">/ Địa Chỉ /</h2>
-            <p style="animation-timing-function: calc();">Nhấn để <a  href="https://www.google.com/maps/place/10%C2%B036'55.0%22N+37%C2%B042'55.0%22E/@10.615278,37.715278,15z/data=!4m2!3m1!1s0x0:0x0" target="_blank">Xem bản đồ </a></p>
+            <p style="animation-timing-function: calc();">Nhấn để <a
+                    href="https://www.google.com/maps/place/10%C2%B036'55.0%22N+37%C2%B042'55.0%22E/@10.615278,37.715278,15z/data=!4m2!3m1!1s0x0:0x0"
+                    target="_blank">Xem bản đồ </a></p>
             <div class="map-container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3477.59659337964!2d105.92457197502662!3d9.64485449044316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMzgnNDEuNSJOIDEwNcKwNTUnMzcuNyJF!5e1!3m2!1svi!2s!4v1762442252118!5m2!1svi!2s"
@@ -4518,7 +4627,7 @@
         </section>
         <!-- Timeline -->
         <div class="section timeline-section">
-            <h2 class="timeline-title venue" >TIME LINE</h2>
+            <h2 class="timeline-title venue">TIME LINE</h2>
             <p class="timeline-subtitle venue">Wedding process</p>
 
             <div class="timeline-items">
@@ -4635,7 +4744,8 @@
             <button class="close-btn" onclick="closeThankYouModal()">✕</button>
 
             <img class="thank-you-image"
-                src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg" alt="Thank You">
+                src="https://res.cloudinary.com/devdnfoyh/image/upload/v1762071611/efa97aeaab4f26117f5e15_hd5agp.jpg"
+                alt="Thank You">
 
             <h2>Cảm Ơn Bạn!</h2>
 
@@ -5186,7 +5296,7 @@
         })();
 
         // Timeline Sequential Animation
-        (function() {
+        (function () {
             const timelineSection = document.querySelector('.timeline-section');
             if (!timelineSection) return;
 
@@ -5207,7 +5317,8 @@
                         timelineItems.forEach((item, index) => {
                             setTimeout(() => {
                                 item.classList.add('animate-item');
-                            }, 400 + (index * 200)); // Start after line animation, then 200ms apart
+                            }, 400 + (index *
+                            200)); // Start after line animation, then 200ms apart
                         });
 
                         timelineObserver.unobserve(entry.target);
