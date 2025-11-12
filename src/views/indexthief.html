@@ -2076,8 +2076,8 @@
         }
 
         .thank-you-image {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 200px;
             border-radius: 50%;
             margin: 0 auto 25px;
             border: 5px solid #A63736;
@@ -3337,7 +3337,31 @@
                     <br>
                     <h4 class="venue" style="margin: 0px;">Thân mời bạn đến dự <br> lễ VU QUY </h4>
                     <div class="venue" style="margin: 0px;">tại Tư Gia</div>
-                    <div class="venue" style="margin: 0px;">vào lúc 11:00 - CHỦ NHẬT</div>
+                    <div class="venue" style="margin: 0px;">vào lúc 11:00 - CHỦ NHẬT
+                         <style>
+                                .clock-pulse {
+                                    display: inline-block;
+                                    font-size: 20px;
+                                    color: #e74c3c;
+                                    filter: drop-shadow(0 0 8px rgba(231, 76, 60, 0.6));
+                                    animation: pulse 0.8s ease-in-out infinite;
+                                }
+
+                                @keyframes pulse {
+
+                                    0%,
+                                    100% {
+                                        transform: scale(1);
+                                    }
+
+                                    50% {
+                                        transform: scale(1.4);
+                                    }
+                                }
+                            </style>
+
+                            <span class="clock-pulse">⏱</span>
+                    </div>
 
                     <div class="date-display" style="color: rgb(194, 14, 14); margin-bottom: 3px;">
                         <span class="date-num" style="color: rgb(194, 14, 14); margin-bottom: 3px;">30</span>
@@ -4753,11 +4777,11 @@
 
             <p class="guest-name" id="guestNameDisplay"></p>
 
-            <p>Chúng mình đã nhận được lời chúc của bạn!<br>
+            <p class="guest-name" style="font-size: 20px;">Chúng mình đã nhận được lời chúc của bạn!<br>
                 Rất mong được gặp bạn tại tiệc cưới.<br>
                 Sự hiện diện của bạn sẽ làm cho ngày đặc biệt của chúng mình trọn vẹn hơn.</p>
 
-            <div class="thank-you-hearts">🎊 💐 🎊</div>
+            <!-- <div class="thank-you-hearts">🎊 ❤️ 🎊</div> -->
         </div>
     </div>
 
